@@ -1,0 +1,2 @@
+resolutionHeight=720
+resolutionWidth=1280
