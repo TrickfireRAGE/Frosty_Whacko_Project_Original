@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "obj_exitButton",
   "spriteId": {
-    "name": "spr_button",
-    "path": "sprites/spr_button/spr_button.yy",
+    "name": "spr_buttonAlternative",
+    "path": "sprites/spr_buttonAlternative/spr_buttonAlternative.yy",
   },
   "solid": false,
   "visible": true,
