@@ -2,7 +2,8 @@
 
 #region Save File Loading (Not finished, create once settings are done)
 
-global.fish_wallet = 0; // Used for storing fish inbetween levels.
+global.fishWallet = undefined; // Used for storing fish inbetween levels.
+global.userName = undefined; // Used to check which save it is.
 // Continue later
 
 #endregion
@@ -17,6 +18,10 @@ global.soundVolume = undefined;
 scr_menuResolution(global.resolutionHeight, global.fullScreen);
 scr_menuSound(global.soundVolume);
 
+#endregion
 
+#region Variable Room Checking
+
+global.returnSettings = undefined;
 
 #endregion
