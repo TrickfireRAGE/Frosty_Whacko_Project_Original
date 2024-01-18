@@ -10,4 +10,3 @@ if (userOneNameVerify == 0)
 {
 	draw_text_transformed(x, y, "EMPTY SAVE", 0.8, 0.8, 0);
 }
-

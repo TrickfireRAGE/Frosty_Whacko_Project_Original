@@ -1,10 +1,10 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_test2",
+  "name": "obj_smallButtonS1Confirm",
   "spriteId": {
-    "name": "spr_button",
-    "path": "sprites/spr_button/spr_button.yy",
+    "name": "spr_buttonSmall",
+    "path": "sprites/spr_buttonSmall/spr_buttonSmall.yy",
   },
   "solid": false,
   "visible": true,
@@ -29,12 +29,13 @@
   "physicsShapePoints": [],
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":4,"eventType":6,"collisionObjectId":null,},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Main Menu Screen",
-    "path": "folders/Objects/Buttons/Main Menu Screen.yy",
+    "name": "1 - Save One",
+    "path": "folders/Objects/Buttons/Save Menu Screen/1 - Save One.yy",
   },
 }

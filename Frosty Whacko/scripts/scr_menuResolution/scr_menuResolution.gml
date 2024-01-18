@@ -9,7 +9,7 @@ function scr_menuResolution(_height, _fullScreen) // So it doesn't need to be re
 		_fullScreen = ini_read_real("resolution", "fullscreen", 0);
 		if (ini_read_real("resolution", "height", 0) == 0)
 		{
-			_height = 270; // Default Resolution is 480 X 270
+			_height = 480; // Default Resolution is 480 X 270
 		}
 		if (ini_read_real("resolution", "fullscreen", -1) == -1) // Using minus 1 since 0 is used for off.
 		{

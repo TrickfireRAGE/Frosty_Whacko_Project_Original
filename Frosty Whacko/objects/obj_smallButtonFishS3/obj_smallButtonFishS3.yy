@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_smallButtonRes270P",
+  "name": "obj_smallButtonFishS3",
   "spriteId": {
     "name": "spr_buttonSmall",
     "path": "sprites/spr_buttonSmall/spr_buttonSmall.yy",
@@ -29,12 +29,13 @@
   "physicsShapePoints": [],
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":4,"eventType":6,"collisionObjectId":null,},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Res - Sub Menu",
-    "path": "folders/Objects/Buttons/Settings Screen/Res - Sub Menu.yy",
+    "name": "3 - Save Three",
+    "path": "folders/Objects/Buttons/Save Menu Screen/3 - Save Three.yy",
   },
 }

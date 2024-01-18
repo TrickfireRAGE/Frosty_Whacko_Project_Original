@@ -13,7 +13,9 @@ if (room == rm_credits)
 		"\nGame Design - Jonathon Lloyd-Jones" +
 		"\n-------------------------------" +
 		"\nExternal Assistance" +
-		"\nMusic - The KAI Games", 0.70, 0.70, 0, c_grey, c_grey, c_grey, c_grey, 1);
+		"\nMusic - The KAI Games" +
+		"\nSound Effects Obtained from -"+ 
+		"\nhttps://www.zapsplat.com", 0.70, 0.70, 0, c_grey, c_grey, c_grey, c_grey, 1);
 }
 
 #endregion
