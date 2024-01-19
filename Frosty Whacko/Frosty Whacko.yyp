@@ -38,6 +38,7 @@
     {"id":{"name":"spr_snowAir","path":"sprites/spr_snowAir/spr_snowAir.yy",},"order":2,},
     {"id":{"name":"fnt_baseFont","path":"fonts/fnt_baseFont/fnt_baseFont.yy",},"order":0,},
     {"id":{"name":"obj_saveOneButton","path":"objects/obj_saveOneButton/obj_saveOneButton.yy",},"order":0,},
+    {"id":{"name":"spr_backgroundMountColoured","path":"sprites/spr_backgroundMountColoured/spr_backgroundMountColoured.yy",},"order":4,},
     {"id":{"name":"spr_storePenguin2","path":"sprites/spr_storePenguin2/spr_storePenguin2.yy",},"order":16,},
     {"id":{"name":"snd_backgroundMusicShiru","path":"sounds/snd_backgroundMusicShiru/snd_backgroundMusicShiru.yy",},"order":2,},
     {"id":{"name":"obj_powerUpsButton","path":"objects/obj_powerUpsButton/obj_powerUpsButton.yy",},"order":0,},
@@ -46,6 +47,7 @@
     {"id":{"name":"spr_frostyWhackoLogoL","path":"sprites/spr_frostyWhackoLogoL/spr_frostyWhackoLogoL.yy",},"order":1,},
     {"id":{"name":"spr_trickfireStudiosLogo","path":"sprites/spr_trickfireStudiosLogo/spr_trickfireStudiosLogo.yy",},"order":4,},
     {"id":{"name":"rm_settings","path":"rooms/rm_settings/rm_settings.yy",},"order":0,},
+    {"id":{"name":"obj_fishMMButtons","path":"objects/obj_fishMMButtons/obj_fishMMButtons.yy",},"order":3,},
     {"id":{"name":"scr_menuResolution","path":"scripts/scr_menuResolution/scr_menuResolution.yy",},"order":0,},
     {"id":{"name":"spr_sealBomb_strip16","path":"sprites/spr_sealBomb_strip16/spr_sealBomb_strip16.yy",},"order":0,},
     {"id":{"name":"spr_buttonIceyAlternative","path":"sprites/spr_buttonIceyAlternative/spr_buttonIceyAlternative.yy",},"order":5,},
@@ -144,6 +146,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Notes","folderPath":"folders/Notes.yy","order":13,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Objects","folderPath":"folders/Objects.yy","order":9,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Buttons","folderPath":"folders/Objects/Buttons.yy","order":4,},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Level Selection","folderPath":"folders/Objects/Buttons/Level Selection.yy","order":7,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Main Menu Screen","folderPath":"folders/Objects/Buttons/Main Menu Screen.yy","order":3,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Save Menu Screen","folderPath":"folders/Objects/Buttons/Save Menu Screen.yy","order":5,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"1 - Save One","folderPath":"folders/Objects/Buttons/Save Menu Screen/1 - Save One.yy","order":3,},
@@ -176,7 +179,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Seals","folderPath":"folders/Sprites/Seals.yy","order":6,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy","order":2,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy","order":8,},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Level Selection","folderPath":"folders/Objects/Buttons/Level Selection.yy","order":7,},
   ],
   "AudioGroups": [
     {"resourceType":"GMAudioGroup","resourceVersion":"1.3","name":"audiogroup_default","targets":-1,},
@@ -190,7 +192,6 @@
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"userSettings.txt.txt","CopyToMask":-1,"filePath":"datafiles",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"vid_trickfireStudiosIntro.mp4","CopyToMask":-1,"filePath":"datafiles",},
-    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"vid_trickfireStudios270p.mp4","CopyToMask":-1,"filePath":"datafiles",},
   ],
   "MetaData": {
     "IDEVersion": "2022.0.1.31",

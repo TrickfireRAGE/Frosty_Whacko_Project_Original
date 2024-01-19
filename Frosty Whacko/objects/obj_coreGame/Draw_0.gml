@@ -36,6 +36,16 @@ if (room == rm_trickfireStudios)
 
 #endregion
 
+#region Main Menu
+
+if (room == rm_mainMenu)
+{
+	draw_set_font(fnt_creditsFont);
+	draw_text(172, 20, "MAIN MENU");
+}
+
+#endregion
+
 #region Level Selection (Only needed for Prototype)
 
 if (room == rm_levelSelection)

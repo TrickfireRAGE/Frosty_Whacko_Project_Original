@@ -8,6 +8,7 @@ global.userName = undefined; // Used to check which save it is.
 
 #endregion
 
+
 #region Display Initialization
 
 global.resolutionWidth = undefined;
@@ -16,6 +17,13 @@ global.fullScreen = undefined;
 global.soundVolume = undefined;
 
 scr_menuResolution(global.resolutionHeight, global.fullScreen);
+
+#endregion
+
+#region Sound Initialization
+
+global.soundVolume = undefined;
+
 scr_menuSound(global.soundVolume);
 
 #endregion
@@ -25,3 +33,6 @@ scr_menuSound(global.soundVolume);
 global.returnSettings = undefined;
 
 #endregion
+
+
+
