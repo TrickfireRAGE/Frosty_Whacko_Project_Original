@@ -11,8 +11,8 @@
   "type": 0,
   "bitDepth": 1,
   "audioGroupId": {
-    "name": "audio_musicGroup",
-    "path": "audiogroups/audio_musicGroup",
+    "name": "audio_groupMusic",
+    "path": "audiogroups/audio_groupMusic",
   },
   "soundFile": "snd_backgroundMusicFate.mp3",
   "duration": 76.85223,
