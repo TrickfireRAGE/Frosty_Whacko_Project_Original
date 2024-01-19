@@ -18,7 +18,6 @@
   "layers": [
     {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Snow_Layer","spriteId":{"name":"spr_snowAir","path":"sprites/spr_snowAir/spr_snowAir.yy",},"colour":4294967295,"x":0,"y":0,"htiled":true,"vtiled":true,"hspeed":-0.5,"vspeed":0.5,"stretch":false,"animationFPS":30.0,"animationSpeedType":0,"userdefinedAnimFPS":false,"visible":true,"depth":0,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritVisibility":true,"inheritSubLayers":true,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances","instances":[
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_20902D9D","properties":[],"isDnd":false,"objectId":{"name":"obj_coreGame","path":"objects/obj_coreGame/obj_coreGame.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":5.0,"y":4.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_D31D8A8","properties":[],"isDnd":false,"objectId":{"name":"obj_startButton","path":"objects/obj_startButton/obj_startButton.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":416.0,"y":44.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_6F5BA04","properties":[],"isDnd":false,"objectId":{"name":"obj_setButton","path":"objects/obj_setButton/obj_setButton.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":416.0,"y":107.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_6D372D2","properties":[],"isDnd":false,"objectId":{"name":"obj_exitButton","path":"objects/obj_exitButton/obj_exitButton.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":416.0,"y":170.0,},
@@ -34,7 +33,6 @@
   "creationCodeFile": "",
   "inheritCode": false,
   "instanceCreationOrder": [
-    {"name":"inst_20902D9D","path":"rooms/rm_titleScreen/rm_titleScreen.yy",},
     {"name":"inst_D31D8A8","path":"rooms/rm_titleScreen/rm_titleScreen.yy",},
     {"name":"inst_6F5BA04","path":"rooms/rm_titleScreen/rm_titleScreen.yy",},
     {"name":"inst_6D372D2","path":"rooms/rm_titleScreen/rm_titleScreen.yy",},

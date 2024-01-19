@@ -20,4 +20,28 @@ if (room == rm_credits)
 
 #endregion
 
+#region Intro (Trickfire Studios)
+
+// Code again from the Video Tutorial from Shaun Spalding.
+if (room == rm_trickfireStudios)
+{
+	var _videoData = video_draw(); //Processes the video
+	var _videoStatus = _videoData[0];
+	if (_videoStatus == 0) // If it is playing without error
+	{
+		// Draw durface that captured the current video frame
+		draw_surface(_videoData[1], 0, 0);
+	}
+}
+
+#endregion
+
+#region Level Selection (Only needed for Prototype)
+
+if (room == rm_levelSelection)
+{
+	draw_text_transformed(128, 244, "Disclaimer: This is a prototype." + "\nDisplayed Levels are the currently available gameplay areas.", 0.5, 0.5, 0);
+}
+
+#endregion
 

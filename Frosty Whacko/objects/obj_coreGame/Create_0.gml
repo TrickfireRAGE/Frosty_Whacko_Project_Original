@@ -1,6 +1,6 @@
 /// @description Variable Creation/Loading of Configs
 
-#region Save File Loading (Not finished, create once settings are done)
+#region Save File Loading (Not finished)
 
 global.fishWallet = undefined; // Used for storing fish inbetween levels.
 global.userName = undefined; // Used to check which save it is.
