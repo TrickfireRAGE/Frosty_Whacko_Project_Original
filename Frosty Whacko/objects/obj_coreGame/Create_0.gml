@@ -1,5 +1,11 @@
 /// @description Variable Creation/Loading of Configs
 
+#region Enumerations (Not done, do this in the next patch)
+
+//enum enumFullScreen
+
+#endregion
+
 #region Save File Loading (Not finished)
 
 global.fishWallet = undefined; // Used for storing fish inbetween levels.
