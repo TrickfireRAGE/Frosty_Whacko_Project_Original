@@ -14,29 +14,21 @@ var _y = 85; // Used instead of fa_center and fa_middle due to issues
 
 if (room == rm_shopMenu)
 {
-	// shopChosenQuote is randomised at the start of the room and is in the Room_Start Function
-	// 111, 85 if it doesn't work
-	switch (shopChosenQuote)
-	{
-		case (0):
-			draw_text_transformed(_x, _y, shopQuoteOne, 0.5, 0.5, 0);
-			break;
-		case (1):
-			draw_text_transformed(_x, _y, shopQuoteTwo, 0.7, 0.7, 0);
-			break;
-		case (2):
-			draw_text_transformed(_x, _y, shopQuoteThree, 0.7, 0.7, 0);
-			break;
-		case (3):
-			draw_text_transformed(_x, _y, shopQuoteFour, 0.44, 0.44, 0);
-			break;
-		case (4):
-			draw_text_transformed(_x, _y, shopQuoteFive, 0.5, 0.5, 0);
-			break;
-		default:
-			draw_text_transformed(_x, _y, shopQuoteDefault, 0.7, 0.7, 0);
-			break;
-	}
+	draw_text_transformed(_x, _y, string(shopQuote[enumShopQuote.quote][shopChosenQuote]), 
+	shopQuote[enumShopQuote.scale][shopChosenQuote], 
+	shopQuote[enumShopQuote.scale][shopChosenQuote],0);
+}
+if (room == rm_shopPowerUps)
+{
+	draw_text_transformed(_x, _y, string(powerupQuote[enumShopQuote.quote][powerChosenQuote]), 
+	powerupQuote[enumShopQuote.scale][powerChosenQuote], 
+	powerupQuote[enumShopQuote.scale][powerChosenQuote],0);
+}
+if (room == rm_shopSounds)
+{
+	draw_text_transformed(_x, _y, string(soundQuote[enumShopQuote.quote][soundChosenQuote]), 
+	soundQuote[enumShopQuote.scale][soundChosenQuote], 
+	soundQuote[enumShopQuote.scale][soundChosenQuote],0);
 }
 
 #endregion

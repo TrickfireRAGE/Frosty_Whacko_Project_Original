@@ -2,7 +2,17 @@
 
 #region Enumerations (Not done, do this in the next patch)
 
-//enum enumFullScreen
+enum enumFullScreen
+{
+	windowed = 0,
+	fullScreen = 1
+}
+
+enum enumShopQuote
+{
+	quote = 0,
+	scale = 1
+}
 
 #endregion
 
@@ -10,7 +20,6 @@
 
 global.fishWallet = undefined; // Used for storing fish inbetween levels.
 global.userName = undefined; // Used to check which save it is.
-// Continue later
 
 #endregion
 
