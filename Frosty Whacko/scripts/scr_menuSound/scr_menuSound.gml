@@ -19,7 +19,7 @@ function scr_menuSound(_soundVolume)
 	ini_open("userSettings.ini");
 	ini_write_real("sound", "master", global.soundVolume); 
 	//audio_master_gain(global.soundVolume); // Sets the audio to the variable.
-	audio_group_set_gain(audio_groupMusic, (global.soundVolume / 2), 0); // Halfing the Music doesn't make it too overpowering.
+	audio_group_set_gain(audio_groupMusic, (global.soundVolume / 3), 0); // Halfing the Music doesn't make it too overpowering.
 	audio_group_set_gain(audio_groupSoundEffects, global.soundVolume, 0);
 	audio_group_set_gain(audio_groupVoiceActing, global.soundVolume, 0);
 	ini_close();

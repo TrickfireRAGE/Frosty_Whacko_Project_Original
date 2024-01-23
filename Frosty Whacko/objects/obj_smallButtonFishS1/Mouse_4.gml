@@ -1,5 +1,6 @@
 /// @description 
 
-// audio_play_sound(  // Use a small cute seal noise done by me on my VA Mic
+audio_play_sound(snd_soundeffectFishFlop, 0, 0);
+// ^ This is not event inheriting due to having a different core sound effect.
 
 

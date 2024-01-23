@@ -1,5 +1,7 @@
 /// @description 
 
+event_inherited();
+
 if (!instance_exists(obj_smallButtonRes480P)) 
 {
 	var _x = 175;

@@ -1,5 +1,6 @@
 /// @description 
 
+event_inherited();
 
 if (!instance_exists(obj_smallButtonFishS3))
 {

@@ -33,4 +33,9 @@ switch (room)
 	case rm_shopMenu:
 	// add new track if I get any
 		break;
+	case rm_level1_1:
+		audio_stop_all();
+		audio_play_sound(snd_backgroundMusicRight, 0, 1);
+		// ^^ Add code that will change the track depending on what the user has selected if time permits
+		break;
 }

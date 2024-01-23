@@ -1,6 +1,8 @@
 /// @description 
 
-_userTracker = undefined;
+event_inherited();
+
+var _userTracker = undefined;
 
 if (!instance_exists(obj_smallButtonL1_1Score))
 {

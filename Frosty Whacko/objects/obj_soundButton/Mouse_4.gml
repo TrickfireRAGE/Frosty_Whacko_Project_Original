@@ -1,5 +1,7 @@
 /// @description 
 
+event_inherited();
+
 if (!instance_exists(obj_smallButtonSnd25))
 {
 	var _x = 175;

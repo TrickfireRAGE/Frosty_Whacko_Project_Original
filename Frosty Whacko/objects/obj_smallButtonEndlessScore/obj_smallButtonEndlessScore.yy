@@ -1,10 +1,10 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_test",
+  "name": "obj_smallButtonEndlessScore",
   "spriteId": {
-    "name": "spr_button",
-    "path": "sprites/spr_button/spr_button.yy",
+    "name": "spr_buttonIcey",
+    "path": "sprites/spr_buttonIcey/spr_buttonIcey.yy",
   },
   "solid": false,
   "visible": true,
@@ -34,7 +34,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Title Screen",
-    "path": "folders/Objects/Buttons/Title Screen.yy",
+    "name": "Level Selection",
+    "path": "folders/Objects/Buttons/Level Selection.yy",
   },
 }

@@ -1,4 +1,7 @@
 /// @description 
+
+event_inherited();
+
 with(obj_saveOneButton)
 {
 	ini_open("saveFile.ini");

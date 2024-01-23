@@ -11,3 +11,18 @@ if (room == rm_trickfireStudios)
 }
 
 #endregion
+
+#region Spawning Test for Level 1-1 (Needs expansion)
+
+if (room == rm_level1_1)
+{
+	spawnTimer++;
+
+	if (spawnTimer == (room_speed * 2))
+	{
+		scr_sealSpawnL1();
+		spawnTimer = 0;
+	}
+}
+
+#endregion

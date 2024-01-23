@@ -49,5 +49,11 @@ global.returnSettings = undefined;
 
 #endregion
 
+#region Timer for Levels
+
+spawnTimer = 0;
+LevelTimer = undefined; // Set on room start
+
+#endregion
 
 

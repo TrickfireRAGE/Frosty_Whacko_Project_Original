@@ -1,5 +1,7 @@
 /// @description 
 
+event_inherited();
+
 if (!instance_exists(obj_fullscreenButton))
 {
 	var _x = 215;
