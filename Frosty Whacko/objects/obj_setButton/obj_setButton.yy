@@ -35,6 +35,6 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Title Screen",
-    "path": "folders/Objects/Buttons/Title Screen.yy",
+    "path": "folders/1 - Objects/Buttons/Title Screen.yy",
   },
 }

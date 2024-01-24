@@ -35,6 +35,6 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Level Selection",
-    "path": "folders/Objects/Buttons/Level Selection.yy",
+    "path": "folders/1 - Objects/Buttons/Level Selection.yy",
   },
 }

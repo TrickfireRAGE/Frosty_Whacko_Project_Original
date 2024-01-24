@@ -35,6 +35,6 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Res - Sub Menu",
-    "path": "folders/Objects/Buttons/Settings Screen/Res - Sub Menu.yy",
+    "path": "folders/1 - Objects/Buttons/Settings Screen/Res - Sub Menu.yy",
   },
 }

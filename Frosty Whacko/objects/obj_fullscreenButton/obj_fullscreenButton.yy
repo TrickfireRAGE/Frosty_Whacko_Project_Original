@@ -35,6 +35,6 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Window - Sub Menu",
-    "path": "folders/Objects/Buttons/Settings Screen/Window - Sub Menu.yy",
+    "path": "folders/1 - Objects/Buttons/Settings Screen/Window - Sub Menu.yy",
   },
 }

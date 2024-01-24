@@ -36,6 +36,6 @@
   "overriddenProperties": [],
   "parent": {
     "name": "2 - Save Two",
-    "path": "folders/Objects/Buttons/Save Menu Screen/2 - Save Two.yy",
+    "path": "folders/1 - Objects/Buttons/Save Menu Screen/2 - Save Two.yy",
   },
 }

@@ -37,5 +37,8 @@ switch (room)
 		audio_stop_all();
 		audio_play_sound(snd_backgroundMusicRight, 0, 1);
 		// ^^ Add code that will change the track depending on what the user has selected if time permits
+		
+		// Timer Code
+		levelTimer = 120 * room_speed;
 		break;
 }

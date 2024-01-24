@@ -57,6 +57,6 @@
   },
   "parent": {
     "name": "Sub-Menu Shop",
-    "path": "folders/Rooms/Menus/Sub-Menu Shop.yy",
+    "path": "folders/5 - Rooms/Menus/Sub-Menu Shop.yy",
   },
 }

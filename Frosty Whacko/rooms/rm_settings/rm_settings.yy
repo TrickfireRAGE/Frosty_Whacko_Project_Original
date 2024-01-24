@@ -60,6 +60,6 @@
   },
   "parent": {
     "name": "Settings",
-    "path": "folders/Rooms/Settings.yy",
+    "path": "folders/5 - Rooms/Settings.yy",
   },
 }

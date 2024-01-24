@@ -35,6 +35,6 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Sound - Sub Menu",
-    "path": "folders/Objects/Buttons/Settings Screen/Sound - Sub Menu.yy",
+    "path": "folders/1 - Objects/Buttons/Settings Screen/Sound - Sub Menu.yy",
   },
 }

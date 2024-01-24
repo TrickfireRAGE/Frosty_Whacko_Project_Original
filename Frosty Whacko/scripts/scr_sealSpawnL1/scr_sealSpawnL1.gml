@@ -5,6 +5,8 @@ function scr_sealSpawnL1() // For the Levels 1-1 and Beyond in the Level 1 secti
 // Arrays for different layouts that would be communicated through the variables passed through.
 
 {
+	#region Enums
+	
 	enum enumLocation 
 	{
 		xAxis = 0,
@@ -17,6 +19,8 @@ function scr_sealSpawnL1() // For the Levels 1-1 and Beyond in the Level 1 secti
 		Ice = 2, 
 		Bomb = 3
 	}
+	
+	#endregion
 	
 	#region Location Check/Spawning
 	
@@ -41,13 +45,6 @@ function scr_sealSpawnL1() // For the Levels 1-1 and Beyond in the Level 1 secti
 	var spawnX = location[spawnLocation][enumLocation.xAxis];
 	var spawnY = location[spawnLocation][enumLocation.yAxis];
 	
-	while (place_meeting(spawnX, spawnY, all)) // Not working, as seals still spawning in same location.
-	{
-		spawnLocation = irandom_range(0,5);
-		
-		spawnX = location[spawnLocation][enumLocation.xAxis];
-		spawnY = location[spawnLocation][enumLocation.yAxis];
-	}
 	
 	#endregion
 	
@@ -74,19 +71,19 @@ function scr_sealSpawnL1() // For the Levels 1-1 and Beyond in the Level 1 secti
 	switch (chosenSeal)
 	{
 		case (enumSeals.Empty):
-			instance_create_layer(spawnX, spawnY, "Seals_Layer", obj_sealEmpty);
+			instance_create_layer(spawnX, spawnY, "Seals_Layer", obj_sealEmpty, {image_xscale: 1.5, image_yscale: 1.5});
 			exit;
 			break;
 		case (enumSeals.Fish):
-			instance_create_layer(spawnX, spawnY, "Seals_Layer", obj_sealFish);
+			instance_create_layer(spawnX, spawnY, "Seals_Layer", obj_sealFish, {image_xscale: 1.5, image_yscale: 1.5});
 			exit;
 			break;
 		case (enumSeals.Ice):
-			instance_create_layer(spawnX, spawnY, "Seals_Layer", obj_sealIce);
+			instance_create_layer(spawnX, spawnY, "Seals_Layer", obj_sealIce, {image_xscale: 1.5, image_yscale: 1.5});
 			exit;
 			break;
 		case (enumSeals.Bomb):
-			instance_create_layer(spawnX, spawnY, "Seals_Layer", obj_sealBomb);
+			instance_create_layer(spawnX, spawnY, "Seals_Layer", obj_sealBomb, {image_xscale: 1.5, image_yscale: 1.5});
 			exit;
 			break;
 	}

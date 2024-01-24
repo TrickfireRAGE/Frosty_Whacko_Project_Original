@@ -35,6 +35,6 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Power-Ups Shop",
-    "path": "folders/Objects/Buttons/Shop Menu Screen/Power-Ups Shop.yy",
+    "path": "folders/1 - Objects/Buttons/Shop Menu Screen/Power-Ups Shop.yy",
   },
 }

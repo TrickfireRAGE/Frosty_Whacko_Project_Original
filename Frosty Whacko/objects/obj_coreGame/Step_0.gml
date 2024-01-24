@@ -17,8 +17,9 @@ if (room == rm_trickfireStudios)
 if (room == rm_level1_1)
 {
 	spawnTimer++;
+	levelTimer--; // Timer
 
-	if (spawnTimer == (room_speed * 2))
+	if (spawnTimer == (room_speed * 3))
 	{
 		scr_sealSpawnL1();
 		spawnTimer = 0;

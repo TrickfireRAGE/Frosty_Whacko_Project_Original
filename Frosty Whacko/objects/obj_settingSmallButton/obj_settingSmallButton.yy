@@ -35,6 +35,6 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Buttons",
-    "path": "folders/Objects/Buttons.yy",
+    "path": "folders/1 - Objects/Buttons.yy",
   },
 }

@@ -52,7 +52,9 @@ global.returnSettings = undefined;
 #region Timer for Levels
 
 spawnTimer = 0;
-LevelTimer = undefined; // Set on room start
+levelTimer = undefined; // Set on room start
+score = 0; // Starts Score at Zero at the start of the game
+fishScore = 0; // Starts Fish Score at Zero at the start of the game
 
 #endregion
 

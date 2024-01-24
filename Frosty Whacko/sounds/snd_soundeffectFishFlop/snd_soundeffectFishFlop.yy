@@ -18,6 +18,6 @@
   "duration": 0.936,
   "parent": {
     "name": "Sound Effects",
-    "path": "folders/Sounds/Sound Effects.yy",
+    "path": "folders/4 - Sounds/Sound Effects.yy",
   },
 }

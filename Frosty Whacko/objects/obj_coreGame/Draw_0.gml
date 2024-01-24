@@ -55,3 +55,24 @@ if (room == rm_levelSelection)
 
 #endregion
 
+#region Level 1-1 (See if it is visable for other levels)
+
+if (room == rm_level1_1)
+{
+	// Side UI
+	draw_sprite(spr_button, 0, 40, 50);
+	draw_text_transformed(30, 50, "SCORE: " + string(score), 0.6, 0.6, 0);
+	draw_sprite(spr_button, 0, 40, 100);
+	draw_sprite(spr_sealFish_strip16, 15, 15, 100);
+	draw_text_transformed(40, 100, ": " + string(fishScore), 0.8, 0.8, 0);
+	
+	// Top UI
+	draw_sprite_ext(spr_button, 0, 380, 10, 0.75, 0.75, 0, c_white, 1);
+	draw_sprite_ext(spr_timer, 0, 350, 10, 0.4, 0.4, 0, c_white, 1);
+	draw_text_transformed(385, 10, ": " + string(levelTimer / room_speed), 0.6, 0.6, 0);
+	draw_sprite_ext(spr_button, 0, 465, 10, 0.75, 0.75, 0, c_white, 1);
+	draw_text_transformed(452, 12, "LV| 1-1", 0.6, 0.75, 0);
+}
+
+#endregion
+

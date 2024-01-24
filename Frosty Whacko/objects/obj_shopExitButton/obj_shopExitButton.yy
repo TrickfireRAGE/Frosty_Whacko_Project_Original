@@ -35,6 +35,6 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Shop Menu Screen",
-    "path": "folders/Objects/Buttons/Shop Menu Screen.yy",
+    "path": "folders/1 - Objects/Buttons/Shop Menu Screen.yy",
   },
 }

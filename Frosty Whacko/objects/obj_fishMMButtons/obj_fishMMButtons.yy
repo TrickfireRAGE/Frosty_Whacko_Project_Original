@@ -35,6 +35,6 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Main Menu Screen",
-    "path": "folders/Objects/Buttons/Main Menu Screen.yy",
+    "path": "folders/1 - Objects/Buttons/Main Menu Screen.yy",
   },
 }

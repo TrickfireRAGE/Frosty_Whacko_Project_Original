@@ -34,6 +34,6 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Seals",
-    "path": "folders/Objects/Seals.yy",
+    "path": "folders/1 - Objects/Seals.yy",
   },
 }

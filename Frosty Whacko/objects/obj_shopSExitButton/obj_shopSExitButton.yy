@@ -35,6 +35,6 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Sounds Shop",
-    "path": "folders/Objects/Buttons/Shop Menu Screen/Sounds Shop.yy",
+    "path": "folders/1 - Objects/Buttons/Shop Menu Screen/Sounds Shop.yy",
   },
 }

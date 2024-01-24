@@ -132,7 +132,7 @@
   "canGenerateBitmap": true,
   "maintainGms1Font": false,
   "parent": {
-    "name": "Fonts",
-    "path": "folders/Fonts.yy",
+    "name": "7 - Fonts",
+    "path": "folders/7 - Fonts.yy",
   },
 }

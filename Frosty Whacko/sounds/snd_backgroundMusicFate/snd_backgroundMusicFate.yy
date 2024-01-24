@@ -4,7 +4,7 @@
   "name": "snd_backgroundMusicFate",
   "conversionMode": 0,
   "compression": 0,
-  "volume": 1.0,
+  "volume": 0.71,
   "preload": false,
   "bitRate": 128,
   "sampleRate": 44100,
@@ -18,6 +18,6 @@
   "duration": 76.85223,
   "parent": {
     "name": "Music",
-    "path": "folders/Sounds/Music.yy",
+    "path": "folders/4 - Sounds/Music.yy",
   },
 }

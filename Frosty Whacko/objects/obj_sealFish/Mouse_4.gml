@@ -1,7 +1,9 @@
-/// @description ???
+/// @description 
+with (obj_coreGame)
+{
+	fishScore += 1;
+}
 
-instance_destroy();
-
-
-
+// Inherit the parent event
+event_inherited();
 
