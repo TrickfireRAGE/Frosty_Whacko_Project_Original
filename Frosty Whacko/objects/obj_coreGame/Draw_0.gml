@@ -93,7 +93,7 @@ if (room == rm_level1_1)
 		draw_text_transformed(452, 12, "LV| 1-1", 0.6, 0.75, 0);
 		
 		// Power Ups UI
-		//draw_sprite_ext(spr_button, 0, 35, 220, 1.5, 2.5, 90, c_white, 1);
+		draw_sprite_ext(spr_button, 0, 35, 220, 1.5, 2.5, 90, c_white, 1);
 		draw_set_font(fnt_creditsFont);
 		draw_set_halign(fa_left);
 		draw_text_transformed(1, 155, "POWER-UPS!", 0.6, 0.6, 0);
@@ -101,11 +101,13 @@ if (room == rm_level1_1)
 		draw_line_width(0, 214, 75, 214, 2);
 		if (powerUpTT <= enumPowerUps.notUnlocked)
 		{
-			//draw_sprite(spr_notUnlocked, 0, 30, 190); // Need to make sprite for this to work
+			draw_sprite(spr_notUnlocked, 0, 19, 190); 
+			draw_sprite(spr_notUnlocked, 0, 56, 190); 
 		}
 		if (powerUpSD <= enumPowerUps.notUnlocked)
 		{
-			//draw_sprite(spr_notUnlocked, 0, 30, 240);
+			draw_sprite(spr_notUnlocked, 0, 19, 240);
+			draw_sprite(spr_notUnlocked, 0, 56, 240);
 		}
 		if (powerUpTT >= enumPowerUps.Unlocked)
 		{
@@ -123,6 +125,7 @@ if (room == rm_level1_1)
 	{
 		draw_sprite(spr_resultsScreen, 0, 240, 135);
 		draw_set_font(fnt_boldFont);
+		draw_set_halign(fa_center);
 		draw_text_transformed_colour(240, 60, "~~~VICTORY~~~", 1.4, 1.4, 0, c_lime, c_green, c_lime, c_green, 1);
 		draw_text(141, 90, "FINAL SCORE:");
 		draw_text_transformed(281, 90, string(score), 1.2, 1.2, 0);

@@ -32,6 +32,7 @@ switch (room)
 		break;
 	case rm_shopMenu:
 		//Add code to shop menu
+		break;
 	case rm_level1_1:
 		audio_stop_all();
 		audio_play_sound(snd_backgroundMusicRight, 0, 1);

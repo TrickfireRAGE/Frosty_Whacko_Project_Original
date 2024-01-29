@@ -83,6 +83,7 @@
     {"id":{"name":"obj_shopSpeechBubble","path":"objects/obj_shopSpeechBubble/obj_shopSpeechBubble.yy",},"order":5,},
     {"id":{"name":"spr_timer","path":"sprites/spr_timer/spr_timer.yy",},"order":17,},
     {"id":{"name":"obj_settingSmallButton","path":"objects/obj_settingSmallButton/obj_settingSmallButton.yy",},"order":4,},
+    {"id":{"name":"spr_notUnlocked","path":"sprites/spr_notUnlocked/spr_notUnlocked.yy",},"order":20,},
     {"id":{"name":"obj_sealBomb","path":"objects/obj_sealBomb/obj_sealBomb.yy",},"order":1,},
     {"id":{"name":"spr_paw","path":"sprites/spr_paw/spr_paw.yy",},"order":1,},
     {"id":{"name":"obj_shopExitButton","path":"objects/obj_shopExitButton/obj_shopExitButton.yy",},"order":2,},

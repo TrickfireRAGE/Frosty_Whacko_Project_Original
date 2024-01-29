@@ -7,7 +7,7 @@
     "path": "sprites/spr_invisibleButton/spr_invisibleButton.yy",
   },
   "solid": false,
-  "visible": true,
+  "visible": false,
   "managed": true,
   "spriteMaskId": null,
   "persistent": false,

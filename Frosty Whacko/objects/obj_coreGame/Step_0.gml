@@ -40,6 +40,7 @@ if (room == rm_level1_1)
 		instance_destroy(obj_sealFish);
 		instance_destroy(obj_powerUpOneButton);
 		instance_destroy(obj_powerUpTwoButton);
+		instance_destroy(obj_levelExitButton);
 		
 	}
 	if (finishedLevel == enumLevelFinished.finished && !instance_exists(obj_resultsReturnButton))

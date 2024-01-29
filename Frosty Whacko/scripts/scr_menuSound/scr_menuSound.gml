@@ -10,7 +10,7 @@ function scr_menuSound(_soundVolume)
 		_soundVolume = ini_read_real("sound", "master", -1);
 		if (ini_read_real("sound", "master", -1) == -1)
 		{ 
-			_soundVolume = 1
+			_soundVolume = 0.25;
 		}
 		ini_close();
 	}
