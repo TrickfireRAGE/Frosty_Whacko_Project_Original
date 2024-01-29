@@ -1,4 +1,4 @@
-/// @description 
+/// @description Music, Video and Level Timer code.
 
 switch (room)
 {
@@ -31,8 +31,7 @@ switch (room)
 		audio_play_sound(snd_backgroundMusicRight, 0, 1);
 		break;
 	case rm_shopMenu:
-	// add new track if I get any
-		break;
+		//Add code to shop menu
 	case rm_level1_1:
 		audio_stop_all();
 		audio_play_sound(snd_backgroundMusicRight, 0, 1);
@@ -40,5 +39,30 @@ switch (room)
 		
 		// Timer Code
 		levelTimer = 120 * room_speed;
+		powerUpObjectCreation = 1; // Unique Variable needed for creation of objects
+		ini_open("saveFile.ini");
+		switch(global.userName)
+		{
+			case (1):
+				powerUpSD = ini_read_real("User_One_Power_Up", "Times_Two", -1);
+				powerUpTT = ini_read_real("User_One_Power_Up", "Slow_Down", -1);
+				break;
+			case (2):
+				powerUpSD = ini_read_real("User_Two_Power_Up", "Times_Two", -1);
+				powerUpTT = ini_read_real("User_Two_Power_Up", "Slow_Down", -1);
+				break;
+			case (3):
+				powerUpSD = ini_read_real("User_Three_Power_Up", "Times_Two", -1);
+				powerUpTT = ini_read_real("User_Three_Power_Up", "Slow_Down", -1);
+				break;
+		}
+		ini_close();
+		break;
+	case rm_levelSelection:
+		if (!audio_is_playing(snd_backgroundMusicShiru))
+		{
+			audio_stop_all();
+			audio_play_sound(snd_backgroundMusicShiru, 0, 1);
+		}
 		break;
 }

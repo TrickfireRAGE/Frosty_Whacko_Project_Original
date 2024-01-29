@@ -19,10 +19,16 @@ if (room == rm_level1_1)
 	spawnTimer++;
 	levelTimer--; // Timer
 
-	if (spawnTimer == (room_speed * 3) && finishedLevel == enumLevelFinished.notFinished)
+	if (spawnTimer == (room_speed * 2) && finishedLevel == enumLevelFinished.notFinished)
 	{
 		scr_sealSpawnL1();
 		spawnTimer = 0;
+	}
+	if (powerUpObjectCreation == 1)
+	{
+		instance_create_layer(37, 190, "UI_Layer", obj_powerUpOneButton);
+		instance_create_layer(37, 240, "UI_Layer", obj_powerUpTwoButton);
+		powerUpObjectCreation = 0;
 	}
 	if (levelTimer <= 0 && finishedLevel == enumLevelFinished.notFinished)
 	{
@@ -32,6 +38,8 @@ if (room == rm_level1_1)
 	{
 		instance_destroy(obj_sealEmpty);
 		instance_destroy(obj_sealFish);
+		instance_destroy(obj_powerUpOneButton);
+		instance_destroy(obj_powerUpTwoButton);
 		
 	}
 	if (finishedLevel == enumLevelFinished.finished && !instance_exists(obj_resultsReturnButton))

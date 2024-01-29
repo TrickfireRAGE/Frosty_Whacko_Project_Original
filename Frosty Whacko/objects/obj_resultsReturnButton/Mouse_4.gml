@@ -48,4 +48,10 @@ switch(global.userName)
 		break;
 }		
 
+if (!(score == 0))
+{
+	score = 0;
+	fishScore = 0;
+}
+
 room_goto(rm_mainMenu);

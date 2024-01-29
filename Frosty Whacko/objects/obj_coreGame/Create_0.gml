@@ -20,6 +20,12 @@ enum enumLevelFinished
 	finished = 1
 }
 
+enum enumPowerUps
+{
+	notUnlocked = -1,
+	Unlocked = 0
+}
+
 #endregion
 
 #region Save File Loading (Not finished)
@@ -63,6 +69,8 @@ score = 0; // Starts Score at Zero at the start of the game
 fishScore = 0; // Starts Fish Score at Zero at the start of the game
 finishedLevel = enumLevelFinished.notFinished; // Starts the level as not finished.
 timerSprite = 0; // Variable needed for animating the timer in Draw Event
+powerUpTT = enumPowerUps.notUnlocked; // When not unlocked it will be -1
+powerUpSD = enumPowerUps.notUnlocked; // Same as above.
 
 #endregion
 

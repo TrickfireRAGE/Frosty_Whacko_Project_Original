@@ -44,7 +44,7 @@ if (room == rm_mainMenu)
 {
 	draw_set_font(fnt_creditsFont);
 	draw_text(220, 12, "MAIN MENU");
-	draw_sprite(spr_button, 0, 368, 10);
+	draw_sprite_ext(spr_button, 0, 368, 10, 1, 1, 0, c_white, 1); // Used Extended for bug fixing purposes
 	draw_text_transformed(350, 12, "FISH :", 0.8, 0.8, 0);
 	draw_text_transformed(390, 12, string(global.fishWallet), 0.8, 0.8, 0);
 }
@@ -66,6 +66,8 @@ if (room == rm_level1_1)
 {
 	if (finishedLevel == enumLevelFinished.notFinished)
 	{
+		draw_set_halign(fa_center);
+		draw_set_font(fnt_baseFont);
 		draw_sprite(spr_button, 0, 40, 50);
 		draw_text_transformed(25, 50, "SCORE : ", 0.65, 0.65, 0);
 		draw_text_transformed(65, 50, string(score), 0.8, 0.8, 0);
@@ -89,6 +91,33 @@ if (room == rm_level1_1)
 		draw_text_transformed(385, 10, string(levelTimer / room_speed), 0.7, 0.7, 0);
 		draw_sprite_ext(spr_button, 0, 465, 10, 0.75, 0.75, 0, c_white, 1);
 		draw_text_transformed(452, 12, "LV| 1-1", 0.6, 0.75, 0);
+		
+		// Power Ups UI
+		//draw_sprite_ext(spr_button, 0, 35, 220, 1.5, 2.5, 90, c_white, 1);
+		draw_set_font(fnt_creditsFont);
+		draw_set_halign(fa_left);
+		draw_text_transformed(1, 155, "POWER-UPS!", 0.6, 0.6, 0);
+		draw_line_width(0, 160, 75, 160, 2);
+		draw_line_width(0, 214, 75, 214, 2);
+		if (powerUpTT <= enumPowerUps.notUnlocked)
+		{
+			//draw_sprite(spr_notUnlocked, 0, 30, 190); // Need to make sprite for this to work
+		}
+		if (powerUpSD <= enumPowerUps.notUnlocked)
+		{
+			//draw_sprite(spr_notUnlocked, 0, 30, 240);
+		}
+		if (powerUpTT >= enumPowerUps.Unlocked)
+		{
+			draw_sprite(spr_powerUpTimesTwo, 0, 30, 190);
+			draw_text(60, 190, ": " + string(powerUpTT));
+		}		
+		if (powerUpSD >= enumPowerUps.Unlocked)
+		{
+			draw_sprite(spr_powerUpSlowDown, 0, 30, 240);
+			draw_text(60, 190, ": " + string(powerUpSD));
+		}
+			
 	}
 	if (finishedLevel == enumLevelFinished.finished)
 	{

@@ -12,6 +12,8 @@ if (userOneNameVerify == 0)
 	ini_write_real("User_One", "Fish", 0);
 	ini_write_real("User_One", "Verify", 0);	
 	ini_write_real("User_One", "User_Number", 1);
+	ini_write_real("User_One_Power_Ups", "Times_Two", enumPowerUps.notUnlocked);
+	ini_write_real("User_One_Power_Ups", "Slow_Down", enumPowerUps.notUnlocked);
 }
 
 ini_close();

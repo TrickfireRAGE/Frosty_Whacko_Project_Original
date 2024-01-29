@@ -1,6 +1,6 @@
 /// @description ???
 
-// Not inheriting due to not needing text.
+event_inherited();
 
 
 
