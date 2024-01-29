@@ -55,7 +55,8 @@ if (room == rm_mainMenu)
 
 if (room == rm_levelSelection)
 {
-	draw_text_transformed(128, 244, "Disclaimer: This is a prototype." + "\nDisplayed Levels are the currently available gameplay areas.", 0.5, 0.5, 0);
+	draw_text_transformed(128, 244, "Disclaimer: This is a prototype." +
+	"\nDisplayed Levels are the currently available gameplay areas.", 0.5, 0.5, 0);
 }
 
 #endregion
@@ -121,6 +122,7 @@ if (room == rm_level1_1)
 		}
 			
 	}
+	
 	if (finishedLevel == enumLevelFinished.finished)
 	{
 		draw_sprite(spr_resultsScreen, 0, 240, 135);
