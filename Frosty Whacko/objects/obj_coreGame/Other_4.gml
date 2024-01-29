@@ -59,6 +59,13 @@ switch (room)
 		}
 		ini_close();
 		break;
+	case rm_mainMenu:
+		if (!audio_is_playing(snd_backgroundMusicShiru))
+		{
+			audio_stop_all();
+			audio_play_sound(snd_backgroundMusicShiru, 0, 1);
+		}
+		break;
 	case rm_levelSelection:
 		if (!audio_is_playing(snd_backgroundMusicShiru))
 		{
