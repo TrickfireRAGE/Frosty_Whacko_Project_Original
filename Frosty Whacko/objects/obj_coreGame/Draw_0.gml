@@ -5,7 +5,8 @@
 if (room == rm_credits)
 {
 	draw_set_font(fnt_creditsFont);
-	draw_text_transformed_colour(170, 115, 
+	draw_set_halign(fa_left);
+	draw_text_transformed_colour(20, 115, 
 		"FROSTY WHACKO" + // Reason the String was like this was due to the default character bug using @
 		"\nProduced by Trickfire Studios" +
 		"\nProgramming - Jonathon Lloyd-Jones" +
@@ -14,8 +15,9 @@ if (room == rm_credits)
 		"\n-------------------------------" +
 		"\nExternal Assistance" +
 		"\nMusic - The KAI Games" +
-		"\nSound Effects Obtained from -"+ 
-		"\nhttps://www.zapsplat.com", 0.70, 0.70, 0, c_grey, c_grey, c_grey, c_grey, 1);
+		"\nSound Effects Obtained from -" + 
+		"\nhttps://www.zapsplat.com" +
+		"\nGame Engine - GameMaker Studio 2 LTS", 0.70, 0.70, 0, c_grey, c_grey, c_grey, c_grey, 1);
 }
 
 #endregion
@@ -41,7 +43,10 @@ if (room == rm_trickfireStudios)
 if (room == rm_mainMenu)
 {
 	draw_set_font(fnt_creditsFont);
-	draw_text(172, 20, "MAIN MENU");
+	draw_text(220, 12, "MAIN MENU");
+	draw_sprite(spr_button, 0, 368, 10);
+	draw_text_transformed(350, 12, "FISH :", 0.8, 0.8, 0);
+	draw_text_transformed(390, 12, string(global.fishWallet), 0.8, 0.8, 0);
 }
 
 #endregion
@@ -59,19 +64,44 @@ if (room == rm_levelSelection)
 
 if (room == rm_level1_1)
 {
-	// Side UI
-	draw_sprite(spr_button, 0, 40, 50);
-	draw_text_transformed(30, 50, "SCORE: " + string(score), 0.6, 0.6, 0);
-	draw_sprite(spr_button, 0, 40, 100);
-	draw_sprite(spr_sealFish_strip16, 15, 15, 100);
-	draw_text_transformed(40, 100, ": " + string(fishScore), 0.8, 0.8, 0);
+	if (finishedLevel == enumLevelFinished.notFinished)
+	{
+		draw_sprite(spr_button, 0, 40, 50);
+		draw_text_transformed(25, 50, "SCORE : ", 0.65, 0.65, 0);
+		draw_text_transformed(65, 50, string(score), 0.8, 0.8, 0);
+		draw_sprite(spr_button, 0, 40, 100);
+		draw_sprite_ext(spr_sealFish_strip16, 15, 12, 100, 1.25, 1.25, 0, c_white, 1);
+		draw_text_transformed(30, 100, ": ", 0.8, 0.8, 0);
+		draw_text_transformed(65, 100, string(fishScore), 0.8, 0.8, 0);
 	
-	// Top UI
-	draw_sprite_ext(spr_button, 0, 380, 10, 0.75, 0.75, 0, c_white, 1);
-	draw_sprite_ext(spr_timer, 0, 350, 10, 0.4, 0.4, 0, c_white, 1);
-	draw_text_transformed(385, 10, ": " + string(levelTimer / room_speed), 0.6, 0.6, 0);
-	draw_sprite_ext(spr_button, 0, 465, 10, 0.75, 0.75, 0, c_white, 1);
-	draw_text_transformed(452, 12, "LV| 1-1", 0.6, 0.75, 0);
+		// Top UI
+		draw_sprite_ext(spr_button, 0, 380, 10, 0.75, 0.75, 0, c_white, 1);
+		if (timerSprite <= 6)
+		{
+			draw_sprite_ext(spr_timer, timerSprite, 350, 10, 0.4, 0.4, 0, c_white, 1);
+			timerSprite++;
+		}
+		if (timerSprite == 7)
+		{
+			timerSprite = 0;
+		}		
+		draw_text_transformed(360, 10, ": ", 0.6, 0.6, 0);
+		draw_text_transformed(385, 10, string(levelTimer / room_speed), 0.7, 0.7, 0);
+		draw_sprite_ext(spr_button, 0, 465, 10, 0.75, 0.75, 0, c_white, 1);
+		draw_text_transformed(452, 12, "LV| 1-1", 0.6, 0.75, 0);
+	}
+	if (finishedLevel == enumLevelFinished.finished)
+	{
+		draw_sprite(spr_resultsScreen, 0, 240, 135);
+		draw_set_font(fnt_boldFont);
+		draw_text_transformed_colour(240, 60, "~~~VICTORY~~~", 1.4, 1.4, 0, c_lime, c_green, c_lime, c_green, 1);
+		draw_text(141, 90, "FINAL SCORE:");
+		draw_text_transformed(281, 90, string(score), 1.2, 1.2, 0);
+		draw_text(155, 110, "FISH ACQUIRED:");
+		draw_text_transformed(290, 110, string(fishScore), 1.2, 1.2, 0);
+		draw_set_font(fnt_baseFont);
+		draw_text_transformed(340, 190, "EXIT LEVEL", 0.7, 0.7, 0);
+	}
 }
 
 #endregion

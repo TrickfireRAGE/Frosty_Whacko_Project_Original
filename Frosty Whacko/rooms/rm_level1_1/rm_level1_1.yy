@@ -17,7 +17,9 @@
   ],
   "layers": [
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Seals_Layer","instances":[],"visible":true,"depth":0,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritVisibility":true,"inheritSubLayers":true,"gridX":16,"gridY":16,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
-    {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"UI_Layer","instances":[],"visible":true,"depth":100,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritVisibility":true,"inheritSubLayers":true,"gridX":16,"gridY":16,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
+    {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"UI_Layer","instances":[
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_78BF4B6F","properties":[],"isDnd":false,"objectId":{"name":"obj_levelExitButton","path":"objects/obj_levelExitButton/obj_levelExitButton.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":0.72321427,"scaleY":0.5,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":40.5,"y":12.0,},
+      ],"visible":true,"depth":100,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritVisibility":true,"inheritSubLayers":true,"gridX":16,"gridY":16,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_1","tilesetId":{"name":"ts_FrostyWhackoV1","path":"tilesets/ts_FrostyWhackoV1/ts_FrostyWhackoV1.yy",},"x":0,"y":0,"tiles":{"TileDataFormat":1,"SerialiseWidth":30,"SerialiseHeight":17,"TileCompressedData":[
 -129,-2147483648,12,48,49,49,1073741872,48,49,49,1073741872,48,49,49,1073741872,-18,-2147483648,12,1879048241,50,50,1073741873,1879048241,50,50,1073741873,1879048241,50,50,1073741873,
 -18,-2147483648,12,1879048241,50,50,1073741873,1879048241,50,50,1073741873,1879048241,50,50,1073741873,-18,-2147483648,12,1879048240,805306417,805306417,805306416,1879048240,805306417,805306417,805306416,1879048240,805306417,805306417,805306416,
@@ -29,7 +31,9 @@
   "inheritLayers": false,
   "creationCodeFile": "",
   "inheritCode": false,
-  "instanceCreationOrder": [],
+  "instanceCreationOrder": [
+    {"name":"inst_78BF4B6F","path":"rooms/rm_level1_1/rm_level1_1.yy",},
+  ],
   "inheritCreationOrder": false,
   "sequenceId": null,
   "roomSettings": {

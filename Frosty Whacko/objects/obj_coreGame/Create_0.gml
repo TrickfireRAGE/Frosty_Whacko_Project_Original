@@ -14,6 +14,12 @@ enum enumShopQuote
 	scale = 1
 }
 
+enum enumLevelFinished
+{
+	notFinished = 0,
+	finished = 1
+}
+
 #endregion
 
 #region Save File Loading (Not finished)
@@ -55,6 +61,8 @@ spawnTimer = 0;
 levelTimer = undefined; // Set on room start
 score = 0; // Starts Score at Zero at the start of the game
 fishScore = 0; // Starts Fish Score at Zero at the start of the game
+finishedLevel = enumLevelFinished.notFinished; // Starts the level as not finished.
+timerSprite = 0; // Variable needed for animating the timer in Draw Event
 
 #endregion
 

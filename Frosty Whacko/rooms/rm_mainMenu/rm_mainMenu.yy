@@ -21,7 +21,6 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_CEDC5D7","properties":[],"isDnd":false,"objectId":{"name":"obj_beginButton","path":"objects/obj_beginButton/obj_beginButton.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":80.0,"y":48.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4D5EBB41","properties":[],"isDnd":false,"objectId":{"name":"obj_returnButton","path":"objects/obj_returnButton/obj_returnButton.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":80.0,"y":208.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4606804","properties":[],"isDnd":false,"objectId":{"name":"obj_shopButton","path":"objects/obj_shopButton/obj_shopButton.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":80.0,"y":128.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_41DF5B65","properties":[],"isDnd":false,"objectId":{"name":"obj_fishMMButtons","path":"objects/obj_fishMMButtons/obj_fishMMButtons.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":368.0,"y":16.0,},
       ],"visible":true,"depth":0,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritVisibility":true,"inheritSubLayers":true,"gridX":16,"gridY":16,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
     {"resourceType":"GMRAssetLayer","resourceVersion":"1.0","name":"Assets_1","assets":[
         {"resourceType":"GMRSpriteGraphic","resourceVersion":"1.0","name":"graphic_368E105","spriteId":{"name":"spr_sealNoFish_strip16","path":"sprites/spr_sealNoFish_strip16/spr_sealNoFish_strip16.yy",},"headPosition":15.0,"rotation":0.0,"scaleX":13.0,"scaleY":14.0,"animationSpeed":0.0,"colour":4294967295,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":472.0,"y":160.0,},
@@ -36,7 +35,6 @@
     {"name":"inst_CEDC5D7","path":"rooms/rm_mainMenu/rm_mainMenu.yy",},
     {"name":"inst_4D5EBB41","path":"rooms/rm_mainMenu/rm_mainMenu.yy",},
     {"name":"inst_4606804","path":"rooms/rm_mainMenu/rm_mainMenu.yy",},
-    {"name":"inst_41DF5B65","path":"rooms/rm_mainMenu/rm_mainMenu.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

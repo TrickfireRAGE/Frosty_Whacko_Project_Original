@@ -1,13 +1,13 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_fishMMButtons",
+  "name": "obj_resultsReturnButton",
   "spriteId": {
-    "name": "spr_button",
-    "path": "sprites/spr_button/spr_button.yy",
+    "name": "spr_buttonCracked",
+    "path": "sprites/spr_buttonCracked/spr_buttonCracked.yy",
   },
   "solid": false,
-  "visible": true,
+  "visible": false,
   "managed": true,
   "spriteMaskId": null,
   "persistent": false,
@@ -34,7 +34,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Main Menu Screen",
-    "path": "folders/1 - Objects/Buttons/Main Menu Screen.yy",
+    "name": "Level 1-1",
+    "path": "folders/1 - Objects/Buttons/End-Level Screen/Level 1-1.yy",
   },
 }
