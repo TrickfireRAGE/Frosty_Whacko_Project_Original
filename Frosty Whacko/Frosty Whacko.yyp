@@ -174,9 +174,9 @@
   "Folders": [
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"1 - Objects","folderPath":"folders/1 - Objects.yy","order":8,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Buttons","folderPath":"folders/1 - Objects/Buttons.yy","order":4,},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Level Selection","folderPath":"folders/1 - Objects/Buttons/Level Selection.yy","order":7,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Levels Screen","folderPath":"folders/1 - Objects/Buttons/Levels Screen.yy","order":8,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Level 1-1","folderPath":"folders/1 - Objects/Buttons/Levels Screen/Level 1-1.yy","order":2,},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Level Selection","folderPath":"folders/1 - Objects/Buttons/Level Selection.yy","order":7,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Main Menu Screen","folderPath":"folders/1 - Objects/Buttons/Main Menu Screen.yy","order":3,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Save Menu Screen","folderPath":"folders/1 - Objects/Buttons/Save Menu Screen.yy","order":5,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"1 - Save One","folderPath":"folders/1 - Objects/Buttons/Save Menu Screen/1 - Save One.yy","order":3,},
