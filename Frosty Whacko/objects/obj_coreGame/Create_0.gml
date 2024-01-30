@@ -26,6 +26,12 @@ enum enumPowerUps
 	Unlocked = 0
 }
 
+enum enumPowerUpsActivation
+{
+	notActivated = 0,
+	activated = 1
+}
+
 #endregion
 
 #region Save File Loading (Not finished)
@@ -63,14 +69,22 @@ global.returnSettings = undefined;
 
 #region Timer for Levels
 
+// Timers
 spawnTimer = 0;
 levelTimer = undefined; // Set on room start
+timerSprite = 0; // Variable needed for animating the timer in Draw Event
+finishedLevel = enumLevelFinished.notFinished; // Starts the level as not finished.
+
+// Scores
 score = 0; // Starts Score at Zero at the start of the game
 fishScore = 0; // Starts Fish Score at Zero at the start of the game
-finishedLevel = enumLevelFinished.notFinished; // Starts the level as not finished.
-timerSprite = 0; // Variable needed for animating the timer in Draw Event
+
+// Power-Ups
 powerUpTT = enumPowerUps.notUnlocked; // When not unlocked it will be -1
 powerUpSD = enumPowerUps.notUnlocked; // Same as above.
+activatedPowerUpTT = enumPowerUpsActivation.notActivated; // Used for checking if the power is activated
+activatedPowerUpSD = enumPowerUpsActivation.notActivated; // ^ but for Slow Down
+
 
 #endregion
 

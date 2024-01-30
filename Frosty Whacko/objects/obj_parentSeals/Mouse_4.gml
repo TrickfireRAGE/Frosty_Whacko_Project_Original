@@ -1,6 +1,16 @@
 /// @description ???
 
-score += 10;
+with (obj_coreGame)
+{
+	if (activatedPowerUpTT == enumPowerUpsActivation.activated)
+	{
+		score += 20;
+	}
+	if (activatedPowerUpTT == enumPowerUpsActivation.notActivated)
+	{
+		score += 10;
+	}
+}
 
 audio_play_sound(snd_soundeffectWhack, 1, 0);
 

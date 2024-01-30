@@ -41,20 +41,21 @@ switch (room)
 		// Timer Code
 		levelTimer = 120 * room_speed;
 		powerUpObjectCreation = 1; // Unique Variable needed for creation of objects
+		finishedLevel = enumLevelFinished.notFinished; // Used to reset the stage everytime
 		ini_open("saveFile.ini");
 		switch(global.userName)
 		{
 			case (1):
-				powerUpSD = ini_read_real("User_One_Power_Up", "Times_Two", -1);
-				powerUpTT = ini_read_real("User_One_Power_Up", "Slow_Down", -1);
+				powerUpSD = ini_read_real("User_One_Power_Ups", "Times_Two", enumPowerUps.notUnlocked);
+				powerUpTT = ini_read_real("User_One_Power_Ups", "Slow_Down", enumPowerUps.notUnlocked);
 				break;
 			case (2):
-				powerUpSD = ini_read_real("User_Two_Power_Up", "Times_Two", -1);
-				powerUpTT = ini_read_real("User_Two_Power_Up", "Slow_Down", -1);
+				powerUpSD = ini_read_real("User_Two_Power_Ups", "Times_Two", enumPowerUps.notUnlocked);
+				powerUpTT = ini_read_real("User_Two_Power_Ups", "Slow_Down", enumPowerUps.notUnlocked);
 				break;
 			case (3):
-				powerUpSD = ini_read_real("User_Three_Power_Up", "Times_Two", -1);
-				powerUpTT = ini_read_real("User_Three_Power_Up", "Slow_Down", -1);
+				powerUpSD = ini_read_real("User_Three_Power_Ups", "Times_Two", enumPowerUps.notUnlocked);
+				powerUpTT = ini_read_real("User_Three_Power_Ups", "Slow_Down", enumPowerUps.notUnlocked);
 				break;
 		}
 		ini_close();

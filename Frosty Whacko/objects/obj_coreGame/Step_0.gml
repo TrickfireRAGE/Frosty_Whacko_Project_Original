@@ -46,7 +46,7 @@ if (room == rm_level1_1)
 	if (finishedLevel == enumLevelFinished.finished && !instance_exists(obj_resultsReturnButton))
 	{
 		instance_create_layer(282, 164, "UI_Layer", obj_resultsReturnButton);
-		// Add victory music code here
+		audio_play_sound(snd_soundeffectVictory, 0, 0, 1.5); // Add code here for alternative options
 	}
 }
 

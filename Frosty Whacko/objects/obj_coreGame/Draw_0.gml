@@ -112,13 +112,13 @@ if (room == rm_level1_1)
 		}
 		if (powerUpTT >= enumPowerUps.Unlocked)
 		{
-			draw_sprite(spr_powerUpTimesTwo, 0, 30, 190);
-			draw_text(60, 190, ": " + string(powerUpTT));
+			draw_sprite(spr_powerUpTimesTwo, 0, 18, 190);
+			draw_text(40, 190, ": " + string(powerUpTT));
 		}		
 		if (powerUpSD >= enumPowerUps.Unlocked)
 		{
-			draw_sprite(spr_powerUpSlowDown, 0, 30, 240);
-			draw_text(60, 190, ": " + string(powerUpSD));
+			draw_sprite(spr_powerUpSlowDown, 0, 18, 240);
+			draw_text(40, 190, ": " + string(powerUpSD));
 		}
 			
 	}
