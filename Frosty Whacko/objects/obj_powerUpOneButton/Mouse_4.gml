@@ -24,6 +24,7 @@ with (obj_coreGame)
 			// Add cool audio here
 			activatedPowerUpTT = enumPowerUpsActivation.activated;
 			alarm_set(2, room_speed * 20); // Activates alarm that will turn the power up off
+			powerUpTTCountdown = (room_speed * 20); // Same as alarm but to showcase how long until the player can use it again.
 		}
 	}
 }

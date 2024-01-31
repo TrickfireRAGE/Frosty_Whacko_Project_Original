@@ -112,15 +112,46 @@ if (room == rm_level1_1)
 		}
 		if (powerUpTT >= enumPowerUps.Unlocked)
 		{
-			draw_sprite(spr_powerUpTimesTwo, 0, 18, 190);
-			draw_text(40, 190, ": " + string(powerUpTT));
+			if (activatedPowerUpTT == enumPowerUpsActivation.activated)
+			{
+				draw_sprite_ext(spr_powerUpTimesTwo, 0, 18, 190, 1, 1, 0, c_grey, 0.7);
+				draw_text_transformed_colour(40, 190, ": " + string(powerUpTTCountdown / 60), 0.6, 0.6, 0, c_grey, c_grey, c_grey, c_grey, 0.7);
+				powerUpTTCountdown--;
+			}
+			if (activatedPowerUpTT == enumPowerUpsActivation.notActivated)
+			{
+				if (powerUpTT == 0)
+				{
+					draw_sprite_ext(spr_powerUpTimesTwo, 0, 40, 188, 1.5, 1.5, 0, c_grey, 0.7);
+				}
+				if (!(powerUpTT == 0))
+				{
+					draw_sprite(spr_powerUpTimesTwo, 0, 18, 190);
+					draw_text(40, 190, ": " + string(powerUpTT));
+				}
+			}
 		}		
 		if (powerUpSD >= enumPowerUps.Unlocked)
 		{
-			draw_sprite(spr_powerUpSlowDown, 0, 18, 240);
-			draw_text(40, 190, ": " + string(powerUpSD));
-		}
-			
+			if (activatedPowerUpSD == enumPowerUpsActivation.activated)
+			{
+				draw_sprite_ext(spr_powerUpSlowDown, 0, 18, 240, 1, 1, 0, c_grey, 0.7);
+				draw_text_transformed_colour(40, 240, ": " + string(powerUpSDCountdown / 60), 0.6, 0.6, 0, c_grey, c_grey, c_grey, c_grey, 0.7);
+				powerUpSDCountdown--;
+			}
+			if (activatedPowerUpSD == enumPowerUpsActivation.notActivated)
+			{
+				if (powerUpSD == 0)
+				{
+					draw_sprite_ext(spr_powerUpSlowDown, 0, 40, 240, 1.5, 1.5, 0, c_grey, 0.7);
+				}
+				if (!(powerUpSD == 0))
+				{
+					draw_sprite(spr_powerUpSlowDown, 0, 18, 240);
+					draw_text(40, 240, ": " + string(powerUpSD));
+				}
+			}
+		}			
 	}
 	
 	if (finishedLevel == enumLevelFinished.finished)
@@ -140,3 +171,74 @@ if (room == rm_level1_1)
 
 #endregion
 
+#region Endless
+
+
+#endregion
+
+#region Shop (Power Ups)
+
+if (room == rm_shopPowerUps)
+{
+	draw_sprite_ext(spr_clipBoard, 0, 250, 25, 1.1, 1.1, 0, c_white, 1);
+	// Horizonial Lines
+	draw_line_width_colour(290, 110, 420, 110, 3, c_black, c_black);
+	draw_line_width_colour(290, 170, 420, 170, 3, c_black, c_black);
+	// Vertical Lines
+	draw_line_width_colour(338, 55, 338, 250, 2, c_black, c_black);
+	draw_line_width_colour(390, 55, 390, 250, 2, c_black, c_black);
+	
+	
+	// Times Two
+	if (global.fishWallet < 100)
+	{
+		draw_sprite_ext(spr_powerUpTimesTwo, 0, 310, 80, 1.5, 1.5, 0, c_grey, 0.7);
+		draw_sprite_ext(spr_fish, 0, 350, 80, 2, 2, 0, c_grey, 0.9);
+		draw_text_colour(375, 80, "100", c_grey, c_grey, c_grey, c_grey, 0.9); 
+		if (instance_exists(obj_shopTTConfirmButton))
+		{
+			instance_destroy(obj_shopTTConfirmButton);
+		}
+	}
+	if (global.fishWallet >= 100)
+	{
+		draw_sprite_ext(spr_powerUpTimesTwo, 0, 310, 80, 1.5, 1.5, 0, c_white, 1);
+		draw_sprite_ext(spr_fish, 0, 350, 80, 2, 2, 0, c_white, 1);
+		draw_text_colour(375, 80, "100", c_blue, c_blue, c_blue, c_blue, 1); 
+		draw_sprite_ext(spr_tick, 0, 415, 75, 0.5, 0.5, 0, c_green, 1);
+		if (!(instance_exists(obj_shopTTConfirmButton)))
+		{
+			instance_create_layer(415, 75, "Instances", obj_shopTTConfirmButton, {image_xscale: 0.5, image_yscale: 0.5});
+		}
+	}
+	
+	// Slow Down
+	if (global.fishWallet < 120)
+	{
+		draw_sprite_ext(spr_powerUpSlowDown, 0, 310, 140, 1.5, 1.5, 0, c_grey, 0.7);
+		draw_sprite_ext(spr_fish, 0, 350, 140, 2, 2, 0, c_grey, 0.9);
+		draw_text_colour(375, 140, "120", c_grey, c_grey, c_grey, c_grey, 0.9);
+		if (instance_exists(obj_shopSDConfirmButton))
+		{
+			instance_destroy(obj_shopSDConfirmButton);
+		}
+	}
+	if (global.fishWallet >= 120)
+	{
+		draw_sprite_ext(spr_powerUpSlowDown, 0, 310, 140, 1.5, 1.5, 0, c_white, 1);
+		draw_sprite_ext(spr_fish, 0, 350, 140, 2, 2, 0, c_white, 1);
+		draw_text_colour(375, 140, "120", c_blue, c_blue, c_blue, c_blue, 1);
+		draw_sprite_ext(spr_tick, 0, 415, 135, 0.5, 0.5, 0, c_green, 1);
+		if (!(instance_exists(obj_shopSDConfirmButton)))
+		{
+			instance_create_layer(415, 135, "Instances", obj_shopSDConfirmButton, {image_xscale: 0.5, image_yscale: 0.5});
+		}
+	}
+	
+	// ?? Power Up AKA Not Available
+	
+	draw_sprite_ext(spr_notUnlocked, 0, 310, 210, 1.2, 1.2, 0, c_teal, 1);
+	draw_sprite_ext(spr_notUnlocked, 0, 365, 210, 1.2, 1.2, 0, c_teal, 1);
+}
+
+#endregion

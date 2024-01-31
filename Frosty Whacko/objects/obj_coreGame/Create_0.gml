@@ -84,6 +84,8 @@ powerUpTT = enumPowerUps.notUnlocked; // When not unlocked it will be -1
 powerUpSD = enumPowerUps.notUnlocked; // Same as above.
 activatedPowerUpTT = enumPowerUpsActivation.notActivated; // Used for checking if the power is activated
 activatedPowerUpSD = enumPowerUpsActivation.notActivated; // ^ but for Slow Down
+powerUpTTCountdown = 0;
+powerUpSDCountdown = 0;
 
 
 #endregion
