@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "obj_shopExitButton",
   "spriteId": {
-    "name": "spr_buttonIceyAlternative",
-    "path": "sprites/spr_buttonIceyAlternative/spr_buttonIceyAlternative.yy",
+    "name": "spr_buttonAlternativeBack",
+    "path": "sprites/spr_buttonAlternativeBack/spr_buttonAlternativeBack.yy",
   },
   "solid": false,
   "visible": true,
