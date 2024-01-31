@@ -46,16 +46,16 @@ switch (room)
 		switch(global.userName)
 		{
 			case (1):
-				powerUpSD = ini_read_real("User_One_Power_Ups", "Times_Two", enumPowerUps.notUnlocked);
-				powerUpTT = ini_read_real("User_One_Power_Ups", "Slow_Down", enumPowerUps.notUnlocked);
+				powerUpTT = ini_read_real("User_One_Power_Ups", "Times_Two", enumPowerUps.notUnlocked);
+				powerUpSD = ini_read_real("User_One_Power_Ups", "Slow_Down", enumPowerUps.notUnlocked);
 				break;
 			case (2):
-				powerUpSD = ini_read_real("User_Two_Power_Ups", "Times_Two", enumPowerUps.notUnlocked);
-				powerUpTT = ini_read_real("User_Two_Power_Ups", "Slow_Down", enumPowerUps.notUnlocked);
+				powerUpTT = ini_read_real("User_Two_Power_Ups", "Times_Two", enumPowerUps.notUnlocked);
+				powerUpSD = ini_read_real("User_Two_Power_Ups", "Slow_Down", enumPowerUps.notUnlocked);
 				break;
 			case (3):
-				powerUpSD = ini_read_real("User_Three_Power_Ups", "Times_Two", enumPowerUps.notUnlocked);
-				powerUpTT = ini_read_real("User_Three_Power_Ups", "Slow_Down", enumPowerUps.notUnlocked);
+				powerUpTT = ini_read_real("User_Three_Power_Ups", "Times_Two", enumPowerUps.notUnlocked);
+				powerUpSD = ini_read_real("User_Three_Power_Ups", "Slow_Down", enumPowerUps.notUnlocked);
 				break;
 		}
 		ini_close();
