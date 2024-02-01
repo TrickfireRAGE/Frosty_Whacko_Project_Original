@@ -7,18 +7,41 @@ if (!place_empty(x, y))
 
 // Put Difficulty Timer here if code breaks.
 
-if (obj_coreGame.activatedPowerUpSD == enumPowerUpsActivation.activated)
+#region Variable Settings (Room)
+
+switch (room)
 {
-	image_speed = 0.5;
-	difficultyTimer = 5;
+	case (rm_level1_1):
+		if (obj_coreGame.activatedPowerUpSD == enumPowerUpsActivation.activated)
+		{
+			image_speed = 0.5;
+			difficultyTimer = 5;
+		}
+		if (obj_coreGame.activatedPowerUpSD == enumPowerUpsActivation.notActivated)
+		{
+			image_speed = 1;
+			difficultyTimer = 3.5;
+			// ^ This variable allows this to be changed if necessary in the future for faster or slower seals.
+			// ^ Will decrease time with higher levels. Consider using switch to customise this.
+		}
+		break;
+	case (rm_levelEndless):
+		if (obj_coreGame.activatedPowerUpSD == enumPowerUpsActivation.activated)
+		{
+			image_speed = 0.75;
+			difficultyTimer = 4;
+		}
+		if (obj_coreGame.activatedPowerUpSD == enumPowerUpsActivation.notActivated)
+		{
+			image_speed = 1.5;
+			difficultyTimer = 2.5;
+			// ^ This variable allows this to be changed if necessary in the future for faster or slower seals.
+			// ^ Will decrease time with higher levels. Consider using switch to customise this.
+		}
+		break;
 }
-if (obj_coreGame.activatedPowerUpSD == enumPowerUpsActivation.notActivated)
-{
-	image_speed = 1;
-	difficultyTimer = 3.5;
-	// ^ This variable allows this to be changed if necessary in the future for faster or slower seals.
-	// ^ Will decrease time with higher levels. Consider using switch to customise this.
-}
+
+#endregion
 
 image_index = 0;
 

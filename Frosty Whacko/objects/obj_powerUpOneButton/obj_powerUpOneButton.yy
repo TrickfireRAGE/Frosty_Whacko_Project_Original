@@ -34,7 +34,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Level 1-1",
-    "path": "folders/1 - Objects/Buttons/Levels Screen/Level 1-1.yy",
+    "name": "Levels Screen",
+    "path": "folders/1 - Objects/Buttons/Levels Screen.yy",
   },
 }

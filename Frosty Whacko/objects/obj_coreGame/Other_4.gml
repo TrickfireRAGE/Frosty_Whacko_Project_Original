@@ -34,14 +34,46 @@ switch (room)
 		//Add code to shop menu
 		break;
 	case rm_level1_1:
+		randomise(); // Randomises the seed so it won't be the same.
 		audio_stop_all();
 		audio_play_sound(snd_backgroundMusicRight, 0, 1);
 		// ^^ Add code that will change the track depending on what the user has selected if time permits
 		
-		// Timer Code
+		// Timer Code + Score Code
 		levelTimer = 120 * room_speed;
 		powerUpObjectCreation = 1; // Unique Variable needed for creation of objects
 		finishedLevel = enumLevelFinished.notFinished; // Used to reset the stage everytime
+		score = 0;
+		fishScore = 0;
+		ini_open("saveFile.ini");
+		switch(global.userName)
+		{
+			case (1):
+				powerUpTT = ini_read_real("User_One_Power_Ups", "Times_Two", enumPowerUps.notUnlocked);
+				powerUpSD = ini_read_real("User_One_Power_Ups", "Slow_Down", enumPowerUps.notUnlocked);
+				break;
+			case (2):
+				powerUpTT = ini_read_real("User_Two_Power_Ups", "Times_Two", enumPowerUps.notUnlocked);
+				powerUpSD = ini_read_real("User_Two_Power_Ups", "Slow_Down", enumPowerUps.notUnlocked);
+				break;
+			case (3):
+				powerUpTT = ini_read_real("User_Three_Power_Ups", "Times_Two", enumPowerUps.notUnlocked);
+				powerUpSD = ini_read_real("User_Three_Power_Ups", "Slow_Down", enumPowerUps.notUnlocked);
+				break;
+		}
+		ini_close();
+		break;
+	case rm_levelEndless:
+		randomise(); // Randomises the Seed for the level so it isn't the same every time
+		audio_stop_all();
+		audio_play_sound(snd_backgroundMusicWrong, 0, 1);
+		// ^^ Add code that will change the track depending on what the user has selected if time permits
+		// Timer Code + Score Code
+		spawnTimer = 0;
+		powerUpObjectCreation = 1; // Unique Variable needed for creation of objects
+		finishedLevel = enumLevelFinished.notFinished; // Used to reset the stage everytime
+		score = 0;
+		fishScore = 0;
 		ini_open("saveFile.ini");
 		switch(global.userName)
 		{

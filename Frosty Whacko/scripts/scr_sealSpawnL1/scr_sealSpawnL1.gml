@@ -25,14 +25,14 @@ function scr_sealSpawnL1() // For the Levels 1-1 and Beyond in the Level 1 secti
 	#region Location Check/Spawning
 	
 	location = [];
-	// Top Row Of Level
+	// First Row Of Level 1-1
 	location[0][enumLocation.xAxis] = 176;
 	location[0][enumLocation.yAxis] = 96;
 	location[1][enumLocation.xAxis] = 240;
 	location[1][enumLocation.yAxis] = 96;
 	location[2][enumLocation.xAxis] = 304;
 	location[2][enumLocation.yAxis] = 96;	
-	// Bottom Row of Level
+	// Second Row of Level 1-1
 	location[3][enumLocation.xAxis] = 176;
 	location[3][enumLocation.yAxis] = 160;
 	location[4][enumLocation.xAxis] = 240;
@@ -40,7 +40,40 @@ function scr_sealSpawnL1() // For the Levels 1-1 and Beyond in the Level 1 secti
 	location[5][enumLocation.xAxis] = 304;
 	location[5][enumLocation.yAxis] = 160;
 	
-	var spawnLocation = irandom_range(0, 5);
+	// Extended Rows for Level Endless
+	// Row 3
+	location[6][enumLocation.xAxis] = 176;
+	location[6][enumLocation.yAxis] = 224;
+	location[7][enumLocation.xAxis] = 240;
+	location[7][enumLocation.yAxis] = 224;
+	location[8][enumLocation.xAxis] = 304;
+	location[8][enumLocation.yAxis] = 224;
+	
+	// Column 4
+	location[9][enumLocation.xAxis] = 368;
+	location[9][enumLocation.yAxis] = 96;
+	location[10][enumLocation.xAxis] = 368;
+	location[10][enumLocation.yAxis] = 160;
+	location[11][enumLocation.xAxis] = 368;
+	location[11][enumLocation.yAxis] = 224;
+	
+	// Column 5
+	location[12][enumLocation.xAxis] = 432;
+	location[12][enumLocation.yAxis] = 96;
+	location[13][enumLocation.xAxis] = 432;
+	location[13][enumLocation.yAxis] = 160;
+	location[14][enumLocation.xAxis] = 432;
+	location[14][enumLocation.yAxis] = 224;
+	
+	switch (room)
+	{
+		case (rm_level1_1):
+			var spawnLocation = irandom_range(0, 5);
+			break;
+		case (rm_levelEndless):
+			var spawnLocation = irandom_range(0, 14);
+			break;
+	}
 	
 	var spawnX = location[spawnLocation][enumLocation.xAxis];
 	var spawnY = location[spawnLocation][enumLocation.yAxis];
@@ -54,18 +87,38 @@ function scr_sealSpawnL1() // For the Levels 1-1 and Beyond in the Level 1 secti
 	
 	randomSeal = irandom_range(0, 999); // To allow for more flexible chances instead of just two numbers. 
 	
-	if (room == rm_level1_1)
+	switch (room)
 	{
-		if (randomSeal >= 500)
-		{
-			chosenSeal = enumSeals.Empty;
-		}
-		if (randomSeal <= 499)
-		{
-			chosenSeal = enumSeals.Fish;
-		}
+		case (rm_level1_1):
+			if (randomSeal >= 500)
+			{
+				chosenSeal = enumSeals.Empty;
+			}
+			if (randomSeal <= 499)
+			{
+				chosenSeal = enumSeals.Fish;
+			}
+			break;
+		case (rm_levelEndless):
+			if (clamp(randomSeal, 986, 999) == randomSeal)
+			{
+				chosenSeal = enumSeals.Bomb;
+			}
+			if (clamp(randomSeal, 0, 15) == randomSeal)
+			{
+				chosenSeal = enumSeals.Ice;
+			}
+			if (clamp(randomSeal, 16, 497) == randomSeal)
+			{
+				chosenSeal = enumSeals.Fish;
+			}
+			if (clamp(randomSeal, 498, 985) == randomSeal) // Clamp checks the range
+			{
+				chosenSeal = enumSeals.Empty;
+			}
+			break;
+			
 	}
-	
 	#endregion
 	
 	switch (chosenSeal)

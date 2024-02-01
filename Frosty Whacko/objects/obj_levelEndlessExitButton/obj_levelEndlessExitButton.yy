@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_levelExitButton",
+  "name": "obj_levelEndlessExitButton",
   "spriteId": {
     "name": "spr_buttonAlternativeBack",
     "path": "sprites/spr_buttonAlternativeBack/spr_buttonAlternativeBack.yy",

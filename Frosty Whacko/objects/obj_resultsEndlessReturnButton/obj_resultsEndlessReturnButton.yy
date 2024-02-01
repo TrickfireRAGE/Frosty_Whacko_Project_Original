@@ -1,13 +1,13 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_levelExitButton",
+  "name": "obj_resultsEndlessReturnButton",
   "spriteId": {
-    "name": "spr_buttonAlternativeBack",
-    "path": "sprites/spr_buttonAlternativeBack/spr_buttonAlternativeBack.yy",
+    "name": "spr_buttonCracked",
+    "path": "sprites/spr_buttonCracked/spr_buttonCracked.yy",
   },
   "solid": false,
-  "visible": true,
+  "visible": false,
   "managed": true,
   "spriteMaskId": null,
   "persistent": false,

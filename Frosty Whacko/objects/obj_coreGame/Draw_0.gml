@@ -1,5 +1,16 @@
 /// @description 
 
+#region Title Screen
+
+if (room == rm_titleScreen)
+{
+	draw_set_font(fnt_creditsFont);
+	draw_text_transformed_colour(400, 10, "Version 0.0.1.6 Alpha Build", 0.3, 0.3, 0, c_red, c_red, c_red, c_red, 0.8);
+	draw_set_font(fnt_baseFont);
+}
+
+#endregion
+
 #region Credits
 
 if (room == rm_credits)
@@ -45,8 +56,8 @@ if (room == rm_mainMenu)
 	draw_set_font(fnt_creditsFont);
 	draw_text(220, 12, "MAIN MENU");
 	draw_sprite_ext(spr_button, 0, 368, 10, 1, 1, 0, c_white, 1); // Used Extended for bug fixing purposes
-	draw_text_transformed(350, 12, "FISH :", 0.8, 0.8, 0);
-	draw_text_transformed(390, 12, string(global.fishWallet), 0.8, 0.8, 0);
+	draw_text_transformed(345, 12, "FISH :", 0.8, 0.8, 0);
+	draw_text_transformed(395, 12, string(global.fishWallet), 0.8, 0.8, 0);
 }
 
 #endregion
@@ -67,6 +78,7 @@ if (room == rm_level1_1)
 {
 	if (finishedLevel == enumLevelFinished.notFinished)
 	{
+		// Side UI
 		draw_set_halign(fa_center);
 		draw_set_font(fnt_baseFont);
 		draw_sprite(spr_button, 0, 40, 50);
@@ -173,6 +185,110 @@ if (room == rm_level1_1)
 
 #region Endless
 
+if (room == rm_levelEndless)
+{
+	if (finishedLevel == enumLevelFinished.notFinished)
+	{
+		// Side UI
+		draw_set_halign(fa_center);
+		draw_set_font(fnt_baseFont);
+		draw_sprite(spr_button, 0, 40, 50);
+		draw_text_transformed(25, 50, "SCORE : ", 0.65, 0.65, 0);
+		draw_text_transformed(65, 50, string(score), 0.8, 0.8, 0);
+		draw_sprite(spr_button, 0, 40, 100);
+		draw_sprite_ext(spr_sealFish_strip16, 15, 12, 100, 1.25, 1.25, 0, c_white, 1);
+		draw_text_transformed(30, 100, ": ", 0.8, 0.8, 0);
+		draw_text_transformed(65, 100, string(fishScore), 0.8, 0.8, 0);
+	
+		// Top UI
+		draw_sprite_ext(spr_button, 0, 380, 10, 0.75, 0.75, 0, c_white, 1);
+		if (timerSprite <= 6)
+		{
+			draw_sprite_ext(spr_timer, timerSprite, 350, 10, 0.4, 0.4, 0, c_white, 1);
+			timerSprite++;
+		}
+		if (timerSprite == 7)
+		{
+			timerSprite = 0;
+		}		
+		draw_text_transformed(385, 10, "ENDLESS", 0.6, 0.6, 0);
+		
+		// Power Ups UI
+		draw_sprite_ext(spr_button, 0, 35, 220, 1.5, 2.5, 90, c_white, 1);
+		draw_set_font(fnt_creditsFont);
+		draw_set_halign(fa_left);
+		draw_text_transformed(1, 155, "POWER-UPS!", 0.6, 0.6, 0);
+		draw_line_width(0, 160, 75, 160, 2);
+		draw_line_width(0, 214, 75, 214, 2);
+		if (powerUpTT <= enumPowerUps.notUnlocked)
+		{
+			draw_sprite(spr_notUnlocked, 0, 19, 190); 
+			draw_sprite(spr_notUnlocked, 0, 56, 190); 
+		}
+		if (powerUpSD <= enumPowerUps.notUnlocked)
+		{
+			draw_sprite(spr_notUnlocked, 0, 19, 240);
+			draw_sprite(spr_notUnlocked, 0, 56, 240);
+		}
+		if (powerUpTT >= enumPowerUps.Unlocked)
+		{
+			if (activatedPowerUpTT == enumPowerUpsActivation.activated)
+			{
+				draw_sprite_ext(spr_powerUpTimesTwo, 0, 18, 190, 1, 1, 0, c_grey, 0.7);
+				draw_text_transformed_colour(40, 190, ": " + string(powerUpTTCountdown / 60), 0.6, 0.6, 0, c_grey, c_grey, c_grey, c_grey, 0.7);
+				powerUpTTCountdown--;
+			}
+			if (activatedPowerUpTT == enumPowerUpsActivation.notActivated)
+			{
+				if (powerUpTT == 0)
+				{
+					draw_sprite_ext(spr_powerUpTimesTwo, 0, 40, 188, 1.5, 1.5, 0, c_grey, 0.7);
+				}
+				if (!(powerUpTT == 0))
+				{
+					draw_sprite(spr_powerUpTimesTwo, 0, 18, 190);
+					draw_text(40, 190, ": " + string(powerUpTT));
+				}
+			}
+		}		
+		if (powerUpSD >= enumPowerUps.Unlocked)
+		{
+			if (activatedPowerUpSD == enumPowerUpsActivation.activated)
+			{
+				draw_sprite_ext(spr_powerUpSlowDown, 0, 18, 240, 1, 1, 0, c_grey, 0.7);
+				draw_text_transformed_colour(40, 240, ": " + string(powerUpSDCountdown / 60), 0.6, 0.6, 0, c_grey, c_grey, c_grey, c_grey, 0.7);
+				powerUpSDCountdown--;
+			}
+			if (activatedPowerUpSD == enumPowerUpsActivation.notActivated)
+			{
+				if (powerUpSD == 0)
+				{
+					draw_sprite_ext(spr_powerUpSlowDown, 0, 40, 240, 1.5, 1.5, 0, c_grey, 0.7);
+				}
+				if (!(powerUpSD == 0))
+				{
+					draw_sprite(spr_powerUpSlowDown, 0, 18, 240);
+					draw_text(40, 240, ": " + string(powerUpSD));
+				}
+			}
+		}			
+	}
+	
+	if (finishedLevel == enumLevelFinished.finished)
+	{
+		draw_sprite(spr_resultsScreen, 0, 240, 135);
+		draw_set_font(fnt_boldFont);
+		draw_set_halign(fa_center);
+		draw_text_transformed_colour(240, 60, "~~~VICTORY~~~", 1.4, 1.4, 0, c_lime, c_green, c_lime, c_green, 1);
+		draw_text(141, 90, "FINAL SCORE:");
+		draw_text_transformed(281, 90, string(score), 1.2, 1.2, 0);
+		draw_text(155, 110, "FISH ACQUIRED:");
+		draw_text_transformed(290, 110, string(fishScore), 1.2, 1.2, 0);
+		draw_set_font(fnt_baseFont);
+		draw_text_transformed(340, 190, "EXIT LEVEL", 0.7, 0.7, 0);
+	}
+}
+
 
 #endregion
 
@@ -180,6 +296,15 @@ if (room == rm_level1_1)
 
 if (room == rm_shopPowerUps)
 {
+	// Fish Counter
+	draw_sprite(spr_button, 0, 180, 10);
+	draw_set_halign(fa_left);
+	draw_set_font(fnt_creditsFont);
+	draw_text_transformed(133, 10, "FISH: ", 0.8, 0.8, 0);
+	draw_set_halign(fa_center);
+	draw_text_transformed(205, 10, string(global.fishWallet), 0.8, 0.8, 0);
+	draw_set_font(fnt_baseFont);
+	// Clipboard
 	draw_sprite_ext(spr_clipBoard, 0, 250, 25, 1.1, 1.1, 0, c_white, 1);
 	// Horizonial Lines
 	draw_line_width_colour(290, 110, 420, 110, 3, c_black, c_black);

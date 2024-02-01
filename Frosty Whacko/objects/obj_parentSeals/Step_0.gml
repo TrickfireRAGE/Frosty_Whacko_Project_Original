@@ -7,16 +7,34 @@ if (image_speed > 0) // Code from within Manual
 		image_speed = 0;
 		exit;
 	}
-	if (obj_coreGame.activatedPowerUpSD == enumPowerUpsActivation.notActivated)
+	// Room Check
+	switch (room)
 	{
-		image_speed = 1;
-		exit;
-	}
-	if (obj_coreGame.activatedPowerUpSD == enumPowerUpsActivation.activated)
-	{
-		image_speed = 0.5;
-		exit;
-	}
+		case (rm_level1_1):
+			if (obj_coreGame.activatedPowerUpSD == enumPowerUpsActivation.notActivated)
+			{
+				image_speed = 1;
+				exit;
+			}
+			if (obj_coreGame.activatedPowerUpSD == enumPowerUpsActivation.activated)
+			{
+				image_speed = 0.5;
+				exit;
+			}
+			break;
+		case (rm_levelEndless):
+			if (obj_coreGame.activatedPowerUpSD == enumPowerUpsActivation.notActivated)
+			{
+				image_speed = 1.5;
+				exit;
+			}
+			if (obj_coreGame.activatedPowerUpSD == enumPowerUpsActivation.activated)
+			{
+				image_speed = 0.75;
+				exit;
+			}
+			break;
+	}	
 }
 
 

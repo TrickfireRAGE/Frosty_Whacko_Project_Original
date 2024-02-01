@@ -1,17 +1,19 @@
 /// @description ???
 
-with (obj_coreGame)
+if ((sprite_index == spr_sealFish_strip16) || (sprite_index == spr_sealNoFish_strip16))
 {
-	if (activatedPowerUpTT == enumPowerUpsActivation.activated)
+	with (obj_coreGame)
 	{
-		score += 20;
-	}
-	if (activatedPowerUpTT == enumPowerUpsActivation.notActivated)
-	{
-		score += 10;
+		if (activatedPowerUpTT == enumPowerUpsActivation.activated)
+		{
+			score += 20;
+		}
+		if (activatedPowerUpTT == enumPowerUpsActivation.notActivated)
+		{
+			score += 10;
+		}
 	}
 }
-
 audio_play_sound(snd_soundeffectWhack, 1, 0);
 
 switch(sprite_index)
