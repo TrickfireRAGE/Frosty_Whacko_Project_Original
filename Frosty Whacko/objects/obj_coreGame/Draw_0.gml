@@ -1,11 +1,11 @@
 /// @description 
 
-#region Title Screen
+#region Title Screen (Version Number)
 
 if (room == rm_titleScreen)
 {
 	draw_set_font(fnt_creditsFont);
-	draw_text_transformed_colour(400, 10, "Version 0.0.1.6 Alpha Build", 0.3, 0.3, 0, c_red, c_red, c_red, c_red, 0.8);
+	draw_text_transformed_colour(415, 10, "Version 0.0.2.0 Alpha Build", 0.4, 0.4, 0, c_red, c_red, c_red, c_red, 0.8);
 	draw_set_font(fnt_baseFont);
 }
 
@@ -176,6 +176,12 @@ if (room == rm_level1_1)
 		draw_text_transformed(281, 90, string(score), 1.2, 1.2, 0);
 		draw_text(155, 110, "FISH ACQUIRED:");
 		draw_text_transformed(290, 110, string(fishScore), 1.2, 1.2, 0);
+		draw_set_halign(fa_left);
+		draw_sprite_ext(spr_sealNoFish_strip16, 15, 90, 130, 1.5, 1.5, 0, c_white, 1);
+		draw_text(105, 130, "--> " + string(sealNoFishCounter));		
+		draw_sprite_ext(spr_sealFish_strip16, 15, 90, 155, 1.5, 1.5, 0, c_white, 1);
+		draw_text(105, 155, "--> " + string(sealFishCounter));	
+		draw_set_halign(fa_center);
 		draw_set_font(fnt_baseFont);
 		draw_text_transformed(340, 190, "EXIT LEVEL", 0.7, 0.7, 0);
 	}
@@ -189,6 +195,7 @@ if (room == rm_levelEndless)
 {
 	if (finishedLevel == enumLevelFinished.notFinished)
 	{
+		
 		// Side UI
 		draw_set_halign(fa_center);
 		draw_set_font(fnt_baseFont);
@@ -198,7 +205,17 @@ if (room == rm_levelEndless)
 		draw_sprite(spr_button, 0, 40, 100);
 		draw_sprite_ext(spr_sealFish_strip16, 15, 12, 100, 1.25, 1.25, 0, c_white, 1);
 		draw_text_transformed(30, 100, ": ", 0.8, 0.8, 0);
-		draw_text_transformed(65, 100, string(fishScore), 0.8, 0.8, 0);
+		if (explosionCounter == enumExplosionDebuff.deactivated)
+		{
+			draw_text_transformed(65, 100, string(fishScore), 0.8, 0.8, 0);
+		}
+		if (!(explosionCounter == enumExplosionDebuff.deactivated) && (explosionCounter <= enumExplosionDebuff.activated))
+		{
+			draw_sprite(spr_explosion, 0, irandom_range(55, 75), irandom_range(95, 105));
+			draw_sprite(spr_explosion, 0, irandom_range(55, 75), irandom_range(95, 105));
+			draw_sprite(spr_explosion, 0, irandom_range(55, 75), irandom_range(95, 105));			
+			explosionCounter--;
+		}
 	
 		// Top UI
 		draw_sprite_ext(spr_button, 0, 380, 10, 0.75, 0.75, 0, c_white, 1);
@@ -271,7 +288,16 @@ if (room == rm_levelEndless)
 					draw_text(40, 240, ": " + string(powerUpSD));
 				}
 			}
-		}			
+		}
+		
+		// Ice Debuff UI
+		if (!(freezeCounter == enumFreezeDebuff.deactivated) && (freezeCounter <= enumFreezeDebuff.activated))
+		{
+			depth = -9999; // To fix the seals appearing above ice issue
+			draw_sprite_ext(spr_icedOver, 0, 0, 0, 1, 1, 0, c_aqua, (freezeCounter / enumFreezeDebuff.activated));
+			freezeCounter--;
+		}
+		
 	}
 	
 	if (finishedLevel == enumLevelFinished.finished)
@@ -284,6 +310,16 @@ if (room == rm_levelEndless)
 		draw_text_transformed(281, 90, string(score), 1.2, 1.2, 0);
 		draw_text(155, 110, "FISH ACQUIRED:");
 		draw_text_transformed(290, 110, string(fishScore), 1.2, 1.2, 0);
+		draw_set_halign(fa_left);
+		draw_sprite_ext(spr_sealNoFish_strip16, 15, 90, 130, 1.5, 1.5, 0, c_white, 1);
+		draw_text(105, 130, "--> " + string(sealNoFishCounter));		
+		draw_sprite_ext(spr_sealFish_strip16, 15, 90, 155, 1.5, 1.5, 0, c_white, 1);
+		draw_text(105, 155, "--> " + string(sealFishCounter));	
+		draw_sprite_ext(spr_sealBomb_strip16, 15, 90, 180, 1.5, 1.5, 0, c_white, 1);
+		draw_text(105, 180, "--> " + string(sealBombCounter));	
+		draw_sprite_ext(spr_sealIce_strip16, 15, 90, 205, 1.5, 1.5, 0, c_white, 1);
+		draw_text(105, 205, "--> " + string(sealIceCounter));
+		draw_set_halign(fa_center);
 		draw_set_font(fnt_baseFont);
 		draw_text_transformed(340, 190, "EXIT LEVEL", 0.7, 0.7, 0);
 	}

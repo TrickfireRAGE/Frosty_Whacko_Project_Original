@@ -9,7 +9,8 @@ with(obj_saveTwoButton)
 	{
 		ini_write_real("User_Two", "Verify", 1);
 	}
-	global.userName = ini_read_real("User_Two", "User_Number", 0);
+	global.userNameString = "User_Two";
+	// global.userName = ini_read_real("User_Two", "User_Number", 0); // Commented out for testing purposes
 	global.fishWallet = ini_read_real("User_Two", "Fish", -1);
 	ini_close();
 }

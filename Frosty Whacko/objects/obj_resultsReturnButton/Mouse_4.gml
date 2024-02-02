@@ -8,51 +8,19 @@ with (obj_coreGame)
 	_levelFish = fishScore;
 }
 
-switch(global.userName)
+ini_open("saveFile.ini");
+var _fish = ini_read_real(global.userNameString, "Fish", 0);
+ini_write_real(global.userNameString, "Fish", (_levelFish + _fish));
+ini_write_real(global.userNameString + "_Power_Ups", "Times_Two", obj_coreGame.powerUpTT);
+ini_write_real(global.userNameString + "_Power_Ups", "Slow_Down", obj_coreGame.powerUpSD); // To update the power ups to get them used
+global.fishWallet = ini_read_real(global.userNameString, "Fish", 0);
+var _score = ini_read_real(global.userNameString + "_Score", "Level_1-1", 0);
+if (_score < _levelScore)
 {
-	case (1):
-		ini_open("saveFile.ini");
-		var _fish = ini_read_real("User_One", "Fish", 0);
-		ini_write_real("User_One", "Fish", (_levelFish + _fish));
-		ini_write_real("User_One_Power_Ups", "Times_Two", obj_coreGame.powerUpTT);
-		ini_write_real("User_One_Power_Ups", "Slow_Down", obj_coreGame.powerUpSD); // To update the power ups to get them used
-		global.fishWallet = ini_read_real("User_One", "Fish", 0);
-		var _score = ini_read_real("User_One_Score", "Level_1-1", 0);
-		if (_score < _levelScore)
-		{
-			ini_write_real("User_One_Score", "Level_1-1", _levelScore);
-		}
-		ini_close();
-		break;
-	case (2):
-		ini_open("saveFile.ini");
-		var _fish = ini_read_real("User_Two", "Fish", 0);
-		ini_write_real("User_Two", "Fish", (_levelFish + _fish));
-		ini_write_real("User_Two_Power_Ups", "Times_Two", obj_coreGame.powerUpTT);
-		ini_write_real("User_Two_Power_Ups", "Slow_Down", obj_coreGame.powerUpSD); // To update the power ups to get them used
-		global.fishWallet = ini_read_real("User_Two", "Fish", 0);
-		var _score = ini_read_real("User_Two_Score", "Level_1-1", 0);
-		if (_score < _levelScore)
-		{
-			ini_write_real("User_Two_Score", "Level_1-1", _levelScore);
-		}
-		ini_close();
-		break;
-	case (3):
-		ini_open("saveFile.ini");
-		var _fish = ini_read_real("User_Three", "Fish", 0);
-		ini_write_real("User_Three", "Fish", (_levelFish + _fish));
-		ini_write_real("User_Three_Power_Ups", "Times_Two", obj_coreGame.powerUpTT);
-		ini_write_real("User_Three_Power_Ups", "Slow_Down", obj_coreGame.powerUpSD); // To update the power ups to get them used
-		global.fishWallet = ini_read_real("User_Three", "Fish", 0);
-		var _score = ini_read_real("User_Three_Score", "Level_1-1", 0);
-		if (_score < _levelScore)
-		{
-			ini_write_real("User_Three_Score", "Level_1-1", _levelScore);
-		}
-		ini_close();
-		break;
-}		
+	ini_write_real(global.userNameString + "_Score", "Level_1-1", _levelScore);
+}
+ini_close();
+
 
 if (!(score == 0))
 {

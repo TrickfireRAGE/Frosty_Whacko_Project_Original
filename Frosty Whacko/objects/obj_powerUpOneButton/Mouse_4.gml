@@ -8,6 +8,10 @@ with (obj_coreGame)
 	{
 		exit;
 	}
+	if (!(freezeCounter == enumFreezeDebuff.deactivated)) // Sp Players can't use the power up during freeze
+	{
+		exit;
+	}
 	if (activatedPowerUpTT == enumPowerUpsActivation.notActivated)
 	{
 		if (powerUpTT <= enumPowerUps.notUnlocked)

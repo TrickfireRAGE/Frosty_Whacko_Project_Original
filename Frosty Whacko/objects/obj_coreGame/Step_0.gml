@@ -69,10 +69,6 @@ if (room == rm_levelEndless)
 		instance_create_layer(37, 240, "UI_Layer", obj_powerUpTwoButton);
 		powerUpObjectCreation = 0;
 	}
-	if (levelTimer <= 0 && finishedLevel == enumLevelFinished.notFinished)
-	{
-		alarm_set(1,1);
-	}
 	if (finishedLevel == enumLevelFinished.finished && (instance_exists(obj_sealEmpty) || instance_exists(obj_sealFish) || instance_exists(obj_sealBomb) || instance_exists(obj_sealIce)))
 	{
 		instance_destroy(obj_sealEmpty);
@@ -83,6 +79,7 @@ if (room == rm_levelEndless)
 		// These don't need to change due to their universal design.
 		instance_destroy(obj_powerUpOneButton);
 		instance_destroy(obj_powerUpTwoButton);
+		// This needed to be changed for the different variables used for Endless
 		instance_destroy(obj_levelEndlessExitButton);
 		
 	}

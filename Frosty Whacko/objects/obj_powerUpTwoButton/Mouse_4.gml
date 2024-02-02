@@ -8,6 +8,10 @@ with (obj_coreGame)
 	{
 		exit;
 	}
+	if (!(freezeCounter == enumFreezeDebuff.deactivated)) // Same as Button 1
+	{
+		exit;
+	}
 	if (activatedPowerUpSD == enumPowerUpsActivation.notActivated)
 	{
 		if (powerUpSD <= enumPowerUps.notUnlocked)

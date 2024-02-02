@@ -45,22 +45,11 @@ switch (room)
 		finishedLevel = enumLevelFinished.notFinished; // Used to reset the stage everytime
 		score = 0;
 		fishScore = 0;
+		sealNoFishCounter = 0;
+		sealFishCounter = 0;
 		ini_open("saveFile.ini");
-		switch(global.userName)
-		{
-			case (1):
-				powerUpTT = ini_read_real("User_One_Power_Ups", "Times_Two", enumPowerUps.notUnlocked);
-				powerUpSD = ini_read_real("User_One_Power_Ups", "Slow_Down", enumPowerUps.notUnlocked);
-				break;
-			case (2):
-				powerUpTT = ini_read_real("User_Two_Power_Ups", "Times_Two", enumPowerUps.notUnlocked);
-				powerUpSD = ini_read_real("User_Two_Power_Ups", "Slow_Down", enumPowerUps.notUnlocked);
-				break;
-			case (3):
-				powerUpTT = ini_read_real("User_Three_Power_Ups", "Times_Two", enumPowerUps.notUnlocked);
-				powerUpSD = ini_read_real("User_Three_Power_Ups", "Slow_Down", enumPowerUps.notUnlocked);
-				break;
-		}
+		powerUpTT = ini_read_real(global.userNameString + "_Power_Ups", "Times_Two", enumPowerUps.notUnlocked);
+		powerUpSD = ini_read_real(global.userNameString + "_Power_Ups", "Slow_Down", enumPowerUps.notUnlocked);
 		ini_close();
 		break;
 	case rm_levelEndless:
@@ -74,22 +63,13 @@ switch (room)
 		finishedLevel = enumLevelFinished.notFinished; // Used to reset the stage everytime
 		score = 0;
 		fishScore = 0;
+		sealNoFishCounter = 0;
+		sealFishCounter = 0;
+		sealBombCounter = 0;
+		sealIceCounter = 0;
 		ini_open("saveFile.ini");
-		switch(global.userName)
-		{
-			case (1):
-				powerUpTT = ini_read_real("User_One_Power_Ups", "Times_Two", enumPowerUps.notUnlocked);
-				powerUpSD = ini_read_real("User_One_Power_Ups", "Slow_Down", enumPowerUps.notUnlocked);
-				break;
-			case (2):
-				powerUpTT = ini_read_real("User_Two_Power_Ups", "Times_Two", enumPowerUps.notUnlocked);
-				powerUpSD = ini_read_real("User_Two_Power_Ups", "Slow_Down", enumPowerUps.notUnlocked);
-				break;
-			case (3):
-				powerUpTT = ini_read_real("User_Three_Power_Ups", "Times_Two", enumPowerUps.notUnlocked);
-				powerUpSD = ini_read_real("User_Three_Power_Ups", "Slow_Down", enumPowerUps.notUnlocked);
-				break;
-		}
+		powerUpTT = ini_read_real(global.userNameString + "_Power_Ups", "Times_Two", enumPowerUps.notUnlocked);
+		powerUpSD = ini_read_real(global.userNameString + "_Power_Ups", "Slow_Down", enumPowerUps.notUnlocked);
 		ini_close();
 		break;
 	case rm_mainMenu:

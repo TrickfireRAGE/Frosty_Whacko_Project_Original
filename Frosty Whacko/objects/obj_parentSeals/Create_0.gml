@@ -45,6 +45,8 @@ switch (room)
 
 image_index = 0;
 
+bonkLimit = 0;
+
 alarm_set(0, room_speed * difficultyTimer);
 
 
