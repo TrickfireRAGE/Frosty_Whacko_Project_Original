@@ -5,7 +5,7 @@
 if (room == rm_titleScreen)
 {
 	draw_set_font(fnt_creditsFont);
-	draw_text_transformed_colour(415, 10, "Version 0.0.2.1 Alpha Build", 0.4, 0.4, 0, c_red, c_red, c_red, c_red, 0.8);
+	draw_text_transformed_colour(415, 10, "Version 0.0.2.2 Alpha Build", 0.4, 0.4, 0, c_red, c_red, c_red, c_red, 0.8);
 	draw_set_font(fnt_baseFont);
 }
 
@@ -375,6 +375,7 @@ if (room == rm_shopPowerUps)
 	draw_sprite(spr_button, 0, 180, 10);
 	draw_set_halign(fa_left);
 	draw_set_font(fnt_creditsFont);
+	draw_sprite_ext(spr_fish, 0, 175, 10, 1.2, 1.2, 0, c_white, 1);
 	draw_text_transformed(133, 10, "FISH: ", 0.8, 0.8, 0);
 	draw_set_halign(fa_center);
 	draw_text_transformed(205, 10, string(global.fishWallet), 0.8, 0.8, 0);
@@ -402,6 +403,7 @@ if (room == rm_shopPowerUps)
 	}
 	if (global.fishWallet >= 100)
 	{
+		draw_sprite_ext(spr_powerUpTimesTwo, 0, 310, 80, 1.7, 1.7, 0, c_red, 0.8);
 		draw_sprite_ext(spr_powerUpTimesTwo, 0, 310, 80, 1.5, 1.5, 0, c_white, 1);
 		draw_sprite_ext(spr_fish, 0, 350, 80, 2, 2, 0, c_white, 1);
 		draw_text_colour(375, 80, "100", c_blue, c_blue, c_blue, c_blue, 1); 
@@ -425,6 +427,7 @@ if (room == rm_shopPowerUps)
 	}
 	if (global.fishWallet >= 120)
 	{
+		draw_sprite_ext(spr_powerUpSlowDown, 0, 310, 140, 1.7, 1.7, 0, c_red, 0.8);
 		draw_sprite_ext(spr_powerUpSlowDown, 0, 310, 140, 1.5, 1.5, 0, c_white, 1);
 		draw_sprite_ext(spr_fish, 0, 350, 140, 2, 2, 0, c_white, 1);
 		draw_text_colour(375, 140, "120", c_blue, c_blue, c_blue, c_blue, 1);
@@ -452,6 +455,7 @@ if (room == rm_shopSounds)
 	draw_set_halign(fa_left);
 	draw_set_font(fnt_creditsFont);
 	draw_text_transformed(133, 10, "FISH: ", 0.8, 0.8, 0);
+	draw_sprite_ext(spr_fish, 0, 175, 10, 1.2, 1.2, 0, c_white, 1);
 	draw_set_halign(fa_center);
 	draw_text_transformed(205, 10, string(global.fishWallet), 0.8, 0.8, 0);
 	draw_text_transformed_colour(355, 10, "ENDLESS ONLY", 0.8, 0.8, 0, c_red, c_orange, c_yellow, c_red, 1);
@@ -548,43 +552,29 @@ if (room == rm_shopSounds)
 		}
 	}
 	
-	// Music Track "snd_backgroundBeyond" - Gekido Sound Track
-	
-	if (global.fishWallet < 1000)
+	// Music Track "snd_backgroundWrong" - Other Level Track, Used for Default Endless
+	if (endlessTrackWrong == true)
 	{
-		instance_create_layer(287, 145, "Shop_Instances", obj_shopBeyondPlayButton, {image_xscale: 0.8, image_yscale: 0.8});
-		draw_text_transformed_colour(325, 147, "'Beyond'" + "\nGekido's Theme", 0.45, 0.45, 0, c_dkgrey, c_dkgrey, c_dkgrey, c_dkgrey, 0.9);
-		draw_sprite_ext(spr_fish, 0, 365, 147, 2, 2, 0, c_grey, 0.9);
-		draw_text_transformed_colour(390, 147, "1000", 0.7, 0.7, 0, c_grey, c_grey, c_grey, c_grey, 0.9); 
-		if (instance_exists(obj_shopBeyondConfirmButton))
-		{
-			instance_destroy(obj_shopBeyondConfirmButton);
-		}
-	}
-	if (global.fishWallet >= 1000 || endlessTrackBeyond == true)
-	{
-		instance_create_layer(287, 145, "Shop_Instances", obj_shopBeyondPlayButton, {image_xscale: 0.8, image_yscale: 0.8});
-		draw_text_transformed_colour(325, 147, "'Beyond'" + "\nGekido's Theme", 0.45, 0.45, 0, c_red, c_orange, c_fuchsia, c_red, 1);
-		switch(endlessTrackBeyond)
+		instance_create_layer(287, 145, "Shop_Instances", obj_shopWrongPlayButton, {image_xscale: 0.8, image_yscale: 0.8});
+		draw_text_transformed_colour(325, 147, "Wrong to Polar" + "\nBear Arms" , 0.47, 0.47, 0, c_red, c_orange, c_fuchsia, c_red, 1);
+		switch(endlessTrackWrong)
 		{
 			case(true):
 				draw_text_transformed_colour(378, 147, "OWNED!", 0.6, 0.6, 0, c_blue, c_purple, c_teal, c_blue, 1);
 				break;
 			case(false):
-				draw_sprite_ext(spr_fish, 0, 365, 147, 2, 2, 0, c_white, 1);
-				draw_text_transformed_colour(388, 147, "1000", 0.7, 0.7, 0, c_blue, c_blue, c_blue, c_blue, 1); 
+				draw_text_transformed_colour(385, 147, "Error", 0.7, 0.7, 0, c_blue, c_blue, c_blue, c_blue, 1); 
 				break;
 		}
-		if (!(instance_exists(obj_shopBeyondConfirmButton)) && !(endlessTrackSelection == enumEndlessTracks.beyondGekidoTheme))
+		if (!(instance_exists(obj_shopWrongConfirmButton)))
 		{
-			instance_create_layer(415, 145, "Shop_Instances", obj_shopBeyondConfirmButton, {image_xscale: 0.4, image_yscale: 0.4});
+			instance_create_layer(415, 147, "Shop_Instances", obj_shopWrongConfirmButton, {image_xscale: 0.4, image_yscale: 0.4});
 		}
-		if (instance_exists(obj_shopBeyondConfirmButton) && endlessTrackSelection == enumEndlessTracks.beyondGekidoTheme)
+		if (instance_exists(obj_shopWrongConfirmButton) && endlessTrackSelection == enumEndlessTracks.wrongToPolarBearArms)
 		{
-			instance_destroy(obj_shopBeyondConfirmButton);
+			instance_destroy(obj_shopWrongConfirmButton);
 		}
 	}
-	
 	
 	// Music Track "snd_backgroundInfiniteInstru" - Infinite's Instramental from Sonic Forces. Not Usable outside College
 	
@@ -623,29 +613,40 @@ if (room == rm_shopSounds)
 		}
 	}
 	
+	// Music Track "snd_backgroundBeyond" - Gekido Sound Track
 	
-	
-	// Music Track "snd_backgroundWrong" - Other Level Track, Used for Default Endless
-	if (endlessTrackWrong == true)
+	if (global.fishWallet < 1000)
 	{
-		instance_create_layer(287, 215, "Shop_Instances", obj_shopWrongPlayButton, {image_xscale: 0.8, image_yscale: 0.8});
-		draw_text_transformed_colour(325, 217, "Wrong to Polar" + "\nBear Arms" , 0.47, 0.47, 0, c_red, c_orange, c_fuchsia, c_red, 1);
-		switch(endlessTrackWrong)
+		instance_create_layer(287, 215, "Shop_Instances", obj_shopBeyondPlayButton, {image_xscale: 0.8, image_yscale: 0.8});
+		draw_text_transformed_colour(325, 217, "'Beyond'" + "\nGekido's Theme", 0.45, 0.45, 0, c_dkgrey, c_dkgrey, c_dkgrey, c_dkgrey, 0.9);
+		draw_sprite_ext(spr_fish, 0, 365, 217, 2, 2, 0, c_grey, 0.9);
+		draw_text_transformed_colour(390, 217, "1000", 0.7, 0.7, 0, c_grey, c_grey, c_grey, c_grey, 0.9); 
+		if (instance_exists(obj_shopBeyondConfirmButton))
+		{
+			instance_destroy(obj_shopBeyondConfirmButton);
+		}
+	}
+	if (global.fishWallet >= 1000 || endlessTrackBeyond == true)
+	{
+		instance_create_layer(287, 215, "Shop_Instances", obj_shopBeyondPlayButton, {image_xscale: 0.8, image_yscale: 0.8});
+		draw_text_transformed_colour(325, 217, "'Beyond'" + "\nGekido's Theme", 0.45, 0.45, 0, c_red, c_orange, c_fuchsia, c_red, 1);
+		switch(endlessTrackBeyond)
 		{
 			case(true):
 				draw_text_transformed_colour(378, 217, "OWNED!", 0.6, 0.6, 0, c_blue, c_purple, c_teal, c_blue, 1);
 				break;
 			case(false):
-				draw_text_transformed_colour(385, 217, "Error", 0.7, 0.7, 0, c_blue, c_blue, c_blue, c_blue, 1); 
+				draw_sprite_ext(spr_fish, 0, 365, 217, 2, 2, 0, c_white, 1);
+				draw_text_transformed_colour(388, 217, "1000", 0.7, 0.7, 0, c_blue, c_blue, c_blue, c_blue, 1); 
 				break;
 		}
-		if (!(instance_exists(obj_shopWrongConfirmButton)))
+		if (!(instance_exists(obj_shopBeyondConfirmButton)) && !(endlessTrackSelection == enumEndlessTracks.beyondGekidoTheme))
 		{
-			instance_create_layer(415, 215, "Shop_Instances", obj_shopWrongConfirmButton, {image_xscale: 0.4, image_yscale: 0.4});
+			instance_create_layer(415, 217, "Shop_Instances", obj_shopBeyondConfirmButton, {image_xscale: 0.4, image_yscale: 0.4});
 		}
-		if (instance_exists(obj_shopWrongConfirmButton) && endlessTrackSelection == enumEndlessTracks.wrongToPolarBearArms)
+		if (instance_exists(obj_shopBeyondConfirmButton) && endlessTrackSelection == enumEndlessTracks.beyondGekidoTheme)
 		{
-			instance_destroy(obj_shopWrongConfirmButton);
+			instance_destroy(obj_shopBeyondConfirmButton);
 		}
 	}
 }
