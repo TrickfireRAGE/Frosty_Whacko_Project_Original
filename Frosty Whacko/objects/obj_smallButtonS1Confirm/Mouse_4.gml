@@ -10,8 +10,16 @@ with(obj_saveOneButton)
 		ini_write_real("User_One", "Verify", 1);
 	}
 	global.userNameString = "User_One";
-	// global.userName = ini_read_real("User_One", "User_Number", 0); // Testing Purposes
 	global.fishWallet = ini_read_real("User_One", "Fish", -1);
+	with (obj_coreGame)
+	{
+		endlessTrackSelection = ini_read_real(global.userNameString + "_Sounds", "Track_Selection", enumEndlessTracks.wrongToPolarBearArms);
+		endlessTrackWrong = ini_read_real(global.userNameString + "_Sounds", "Wrong_To_Polar_Bear_Arms", true);
+		endlessTrackFate = ini_read_real(global.userNameString + "_Sounds", "Your_Fate_Is_SEALED", false);
+		endlessTrackRight = ini_read_real(global.userNameString + "_Sounds", "Right_To_Polar_Bear_Arms", false);
+		endlessTrackBeyond = ini_read_real(global.userNameString + "_Sounds", "Beyond", false);
+		endlessTrackInfiniteIntru = ini_read_real(global.userNameString + "_Sounds", "Infinite", false); // CopyRighted
+	}
 	ini_close();
 }
 

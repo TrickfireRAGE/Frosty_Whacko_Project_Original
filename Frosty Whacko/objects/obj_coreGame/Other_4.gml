@@ -31,7 +31,11 @@ switch (room)
 		audio_play_sound(snd_backgroundMusicRight, 0, 1);
 		break;
 	case rm_shopMenu:
-		//Add code to shop menu
+		if (!audio_is_playing(snd_backgroundMusicShiru))
+		{
+			audio_stop_all();
+			audio_play_sound(snd_backgroundMusicShiru, 0, 1);
+		}
 		break;
 	case rm_level1_1:
 		randomise(); // Randomises the seed so it won't be the same.
@@ -55,8 +59,24 @@ switch (room)
 	case rm_levelEndless:
 		randomise(); // Randomises the Seed for the level so it isn't the same every time
 		audio_stop_all();
-		audio_play_sound(snd_backgroundMusicWrong, 0, 1);
-		// ^^ Add code that will change the track depending on what the user has selected if time permits
+		switch(endlessTrackSelection)
+		{
+			case (enumEndlessTracks.wrongToPolarBearArms):
+				audio_play_sound(snd_backgroundMusicWrong, 0, 1);
+				break;
+			case (enumEndlessTracks.yourFateIsSealed):
+				audio_play_sound(snd_backgroundMusicFate, 0, 1);
+				break;
+			case (enumEndlessTracks.rightToPolarBearArms):
+				audio_play_sound(snd_backgroundMusicRight, 0, 1);
+				break;
+			case (enumEndlessTracks.beyondGekidoTheme):
+				audio_play_sound(snd_backgroundMusicBeyond, 0, 1);
+				break;
+			case (enumEndlessTracks.infiniteInstrumental):
+				audio_play_sound(snd_backgroundMusicInfiniteInstru, 0, 1);
+				break;
+		}
 		// Timer Code + Score Code
 		spawnTimer = 0;
 		powerUpObjectCreation = 1; // Unique Variable needed for creation of objects

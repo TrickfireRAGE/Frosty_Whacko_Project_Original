@@ -1,11 +1,11 @@
-/// @description 
+/// @description ALL OF THIS CAN BE IN A UI MANAGER INSTEAD
 
 #region Title Screen (Version Number)
 
 if (room == rm_titleScreen)
 {
 	draw_set_font(fnt_creditsFont);
-	draw_text_transformed_colour(415, 10, "Version 0.0.2.0 Alpha Build", 0.4, 0.4, 0, c_red, c_red, c_red, c_red, 0.8);
+	draw_text_transformed_colour(415, 10, "Version 0.0.2.1 Alpha Build", 0.4, 0.4, 0, c_red, c_red, c_red, c_red, 0.8);
 	draw_set_font(fnt_baseFont);
 }
 
@@ -17,7 +17,7 @@ if (room == rm_credits)
 {
 	draw_set_font(fnt_creditsFont);
 	draw_set_halign(fa_left);
-	draw_text_transformed_colour(20, 115, 
+	draw_text_transformed_colour(20, 125, 
 		"FROSTY WHACKO" + // Reason the String was like this was due to the default character bug using @
 		"\nProduced by Trickfire Studios" +
 		"\nProgramming - Jonathon Lloyd-Jones" +
@@ -26,6 +26,11 @@ if (room == rm_credits)
 		"\n-------------------------------" +
 		"\nExternal Assistance" +
 		"\nMusic - The KAI Games" +
+		"\nBeyond, Gekido's Theme - The KAI Games" +
+		"\nInfinite's Theme, Sonic Forces - " +
+		"\nSEGA + Tomoya Ohtani + Jun Senoue" +
+		"\nInfinite's Theme Vocals and Mixed" +
+		"\n ^ - Tyler Smyth" +
 		"\nSound Effects Obtained from -" + 
 		"\nhttps://www.zapsplat.com" +
 		"\nGame Engine - GameMaker Studio 2 LTS", 0.70, 0.70, 0, c_grey, c_grey, c_grey, c_grey, 1);
@@ -72,7 +77,41 @@ if (room == rm_levelSelection)
 
 #endregion
 
-#region Level 1-1 (See if it is visable for other levels)
+#region Tutorial (Only Needed for Prototype)
+
+if (room == rm_tutorial)
+{
+	var _xSprite = 180;
+	var _xText = 195;
+	var _y = 55;
+	var _scale = 1.5;
+	var _powerScale = 0.7;
+	var _textScale = 0.4;
+	draw_sprite_ext(spr_clipBoard, 0, 120, 0, 1.5, 1.5, 0, c_white, 1);
+	draw_sprite(spr_mouse, 0, _xSprite, _y);
+	draw_set_halign(fa_left);
+	draw_set_color(c_black);
+	draw_text_transformed(_xText, _y, " - Left Click on those CHEEKY SEALS to whack them!", _textScale, _textScale, 0);
+	draw_sprite_ext(spr_sealNoFish_strip16, 15, _xSprite, _y * 1.5, _scale, _scale, 0, c_white, 1);
+	draw_text_transformed(_xText, _y * 1.5, " - This Seal gives 10 score, but he doesn't have Fish!", _textScale, _textScale, 0);
+	draw_sprite_ext(spr_sealFish_strip16, 15, _xSprite, _y * 2, _scale, _scale, 0, c_white, 1);
+	draw_text_transformed(_xText, _y * 2, " - This Seal gives 10 scores and HAS YOUR FISH!", _textScale, _textScale, 0);
+	draw_sprite_ext(spr_sealIce_strip16, 15, _xSprite, _y * 2.5, _scale, _scale, 0, c_white, 1);
+	draw_text_transformed(_xText, _y * 2.5, " - This Seal is FREEZING, will make you stop for a " + "\nfew seconds. No Fish, No Score", _textScale, _textScale, 0);
+	draw_sprite_ext(spr_sealBomb_strip16, 15, _xSprite, _y * 3, _scale, _scale, 0, c_white, 1);
+	draw_text_transformed(_xText, _y * 3, " - This Seal is EXPLOSIVE, all your fish that you " + "\ncollected, will disappear! VERY BAD!", _textScale, _textScale, 0);
+	draw_sprite_ext(spr_fish, 0, _xSprite, _y * 3.5, _scale, _scale, 0, c_white, 1);
+	draw_text_transformed(_xText, _y * 3.5, " - This is the source of everything, more power, food," + "\nand importantly, your reason for whacking them Seals!", _textScale, _textScale, 0);
+	draw_sprite_ext(spr_powerUpTimesTwo, 0, _xSprite, _y * 4, _powerScale, _powerScale, 0, c_white, 1);
+	draw_text_transformed(_xText, _y * 4, " - Want to get more score and Fish? Times Two is how " + "\nit's done, buy from your local penguin!", _textScale, _textScale, 0);
+	draw_sprite_ext(spr_powerUpSlowDown, 0, _xSprite, _y * 4.5, _powerScale, _powerScale, 0, c_white, 1);
+	draw_text_transformed(_xText, _y * 4.5, " - S-S-Slow down your enemies with this cool power!" + "\nIf you want it, go to your local penguin!", _textScale, _textScale, 0);
+	draw_set_halign(fa_center);
+}
+
+#endregion
+
+#region Level 1-1 (Both this and Endless can be improved, see Notes after Talk with Finn)
 
 if (room == rm_level1_1)
 {
@@ -400,6 +439,215 @@ if (room == rm_shopPowerUps)
 	
 	draw_sprite_ext(spr_notUnlocked, 0, 310, 210, 1.2, 1.2, 0, c_teal, 1);
 	draw_sprite_ext(spr_notUnlocked, 0, 365, 210, 1.2, 1.2, 0, c_teal, 1);
+}
+
+#endregion
+
+#region Shop (Sounds) (THIS CAN BE A LOT BETTER IF FOLLOWING NOTES)
+
+if (room == rm_shopSounds)
+{
+	// Fish Counter
+	draw_sprite(spr_button, 0, 180, 10);
+	draw_set_halign(fa_left);
+	draw_set_font(fnt_creditsFont);
+	draw_text_transformed(133, 10, "FISH: ", 0.8, 0.8, 0);
+	draw_set_halign(fa_center);
+	draw_text_transformed(205, 10, string(global.fishWallet), 0.8, 0.8, 0);
+	draw_text_transformed_colour(355, 10, "ENDLESS ONLY", 0.8, 0.8, 0, c_red, c_orange, c_yellow, c_red, 1);
+	draw_set_font(fnt_baseFont);
+	
+	// Clipboard
+	draw_sprite_ext(spr_clipBoard, 0, 250, 25, 1.1, 1.1, 0, c_white, 1);
+	
+	// Horizonial Lines (Can be improved with Variable and then additions.)
+	draw_line_width_colour(282, 92, 428, 92, 2, c_black, c_black);
+	draw_line_width_colour(282, 127, 428, 127, 2, c_black, c_black);
+	draw_line_width_colour(282, 162, 428, 162, 2, c_black, c_black);
+	draw_line_width_colour(282, 197, 428, 197, 2, c_black, c_black);
+	
+	
+	// Vertical Lines
+	draw_line_width_colour(354.5, 58, 354.5, 250, 2, c_black, c_black);
+	draw_line_width_colour(400, 55, 400, 250, 2, c_black, c_black);
+	
+	
+	// Music Track "snd_backgroundMusicFate" - Boss Track (Boss Levels were not implemented in time)
+	// In future, instead of random numbers, have _x and _y variables that will set the numbers so they don't rely on magic numbers.
+	// This makes the code more readable and easy to come back to in future.
+	
+	if (global.fishWallet < 300)
+	{
+		instance_create_layer(287, 75, "Shop_Instances", obj_shopFatePlayButton, {image_xscale: 0.8, image_yscale: 0.8});
+		draw_text_transformed_colour(325, 77, "Your Fate" + "\nis SEALED", 0.6, 0.6, 0, c_dkgrey, c_dkgrey, c_dkgrey, c_dkgrey, 0.9);
+		draw_sprite_ext(spr_fish, 0, 365, 77, 2, 2, 0, c_grey, 0.9);
+		draw_text_transformed_colour(390, 77, "300", 0.75, 0.75, 0, c_grey, c_grey, c_grey, c_grey, 0.9); 
+		if (instance_exists(obj_shopFateConfirmButton))
+		{
+			instance_destroy(obj_shopFateConfirmButton);
+		}
+	}
+	if (global.fishWallet >= 300 || endlessTrackFate == true)
+	{
+		instance_create_layer(287, 75, "Shop_Instances", obj_shopFatePlayButton, {image_xscale: 0.8, image_yscale: 0.8});
+		draw_text_transformed_colour(325, 77, "Your Fate" + "\nis SEALED", 0.6, 0.6, 0, c_red, c_orange, c_fuchsia, c_red, 1); // Future Builds, remove magic numbers and state variables
+		switch(endlessTrackFate)
+		{
+			case(true):
+				draw_text_transformed_colour(378, 77, "OWNED!", 0.6, 0.6, 0, c_blue, c_purple, c_teal, c_blue, 1);
+				break;
+			case(false):
+				draw_sprite_ext(spr_fish, 0, 365, 77, 2, 2, 0, c_white, 1);
+				draw_text_transformed_colour(390, 77, "300", 0.75, 0.75, 0, c_blue, c_blue, c_blue, c_blue, 1); 
+				break;
+		}
+		if (!(instance_exists(obj_shopFateConfirmButton)) && !(endlessTrackSelection == enumEndlessTracks.yourFateIsSealed))
+		{
+			instance_create_layer(415, 75, "Shop_Instances", obj_shopFateConfirmButton, {image_xscale: 0.4, image_yscale: 0.4});
+		}
+		if (instance_exists(obj_shopFateConfirmButton) && endlessTrackSelection == enumEndlessTracks.yourFateIsSealed)
+		{
+			instance_destroy(obj_shopFateConfirmButton);
+		}
+	}
+	
+	// Music Track "snd_backgroundMusicRight" - First Level (Level 1-1)
+	
+	if (global.fishWallet < 150)
+	{
+		instance_create_layer(287, 110, "Shop_Instances", obj_shopRightPlayButton, {image_xscale: 0.8, image_yscale: 0.8});
+		draw_text_transformed_colour(325, 112, "Right to Polar" + "\nBear Arms", 0.5, 0.5, 0, c_dkgrey, c_dkgrey, c_dkgrey, c_dkgrey, 0.9);
+		draw_sprite_ext(spr_fish, 0, 365, 112, 2, 2, 0, c_grey, 0.9);
+		draw_text_transformed_colour(390, 112, "150", 0.6, 0.6, 0, c_grey, c_grey, c_grey, c_grey, 0.9); 
+		if (instance_exists(obj_shopRightConfirmButton))
+		{
+			instance_destroy(obj_shopRightConfirmButton);
+		}
+	}
+	if (global.fishWallet >= 150 || endlessTrackRight == true)
+	{
+		instance_create_layer(287, 110, "Shop_Instances", obj_shopRightPlayButton, {image_xscale: 0.8, image_yscale: 0.8});
+		draw_text_transformed_colour(325, 112, "Right to Polar" + "\nBear Arms", 0.5, 0.5, 0, c_red, c_orange, c_fuchsia, c_red, 1);
+		switch(endlessTrackRight)
+		{
+			case(true):
+				draw_text_transformed_colour(378, 112, "OWNED!", 0.6, 0.6, 0, c_blue, c_purple, c_teal, c_blue, 1);
+				break;
+			case(false):
+				draw_sprite_ext(spr_fish, 0, 365, 112, 2, 2, 0, c_white, 1);
+				draw_text_transformed_colour(390, 112, "150", 0.75, 0.75, 0, c_blue, c_blue, c_blue, c_blue, 1); 
+				break;
+		}
+		if (!(instance_exists(obj_shopRightConfirmButton)) && !(endlessTrackSelection == enumEndlessTracks.rightToPolarBearArms))
+		{
+			instance_create_layer(415, 110, "Shop_Instances", obj_shopRightConfirmButton, {image_xscale: 0.4, image_yscale: 0.4});
+		}
+		if (instance_exists(obj_shopRightConfirmButton) && endlessTrackSelection == enumEndlessTracks.rightToPolarBearArms)
+		{
+			instance_destroy(obj_shopRightConfirmButton);
+		}
+	}
+	
+	// Music Track "snd_backgroundBeyond" - Gekido Sound Track
+	
+	if (global.fishWallet < 1000)
+	{
+		instance_create_layer(287, 145, "Shop_Instances", obj_shopBeyondPlayButton, {image_xscale: 0.8, image_yscale: 0.8});
+		draw_text_transformed_colour(325, 147, "'Beyond'" + "\nGekido's Theme", 0.45, 0.45, 0, c_dkgrey, c_dkgrey, c_dkgrey, c_dkgrey, 0.9);
+		draw_sprite_ext(spr_fish, 0, 365, 147, 2, 2, 0, c_grey, 0.9);
+		draw_text_transformed_colour(390, 147, "1000", 0.7, 0.7, 0, c_grey, c_grey, c_grey, c_grey, 0.9); 
+		if (instance_exists(obj_shopBeyondConfirmButton))
+		{
+			instance_destroy(obj_shopBeyondConfirmButton);
+		}
+	}
+	if (global.fishWallet >= 1000 || endlessTrackBeyond == true)
+	{
+		instance_create_layer(287, 145, "Shop_Instances", obj_shopBeyondPlayButton, {image_xscale: 0.8, image_yscale: 0.8});
+		draw_text_transformed_colour(325, 147, "'Beyond'" + "\nGekido's Theme", 0.45, 0.45, 0, c_red, c_orange, c_fuchsia, c_red, 1);
+		switch(endlessTrackBeyond)
+		{
+			case(true):
+				draw_text_transformed_colour(378, 147, "OWNED!", 0.6, 0.6, 0, c_blue, c_purple, c_teal, c_blue, 1);
+				break;
+			case(false):
+				draw_sprite_ext(spr_fish, 0, 365, 147, 2, 2, 0, c_white, 1);
+				draw_text_transformed_colour(388, 147, "1000", 0.7, 0.7, 0, c_blue, c_blue, c_blue, c_blue, 1); 
+				break;
+		}
+		if (!(instance_exists(obj_shopBeyondConfirmButton)) && !(endlessTrackSelection == enumEndlessTracks.beyondGekidoTheme))
+		{
+			instance_create_layer(415, 145, "Shop_Instances", obj_shopBeyondConfirmButton, {image_xscale: 0.4, image_yscale: 0.4});
+		}
+		if (instance_exists(obj_shopBeyondConfirmButton) && endlessTrackSelection == enumEndlessTracks.beyondGekidoTheme)
+		{
+			instance_destroy(obj_shopBeyondConfirmButton);
+		}
+	}
+	
+	
+	// Music Track "snd_backgroundInfiniteInstru" - Infinite's Instramental from Sonic Forces. Not Usable outside College
+	
+	if (global.fishWallet < 1250)
+	{
+		instance_create_layer(287, 180, "Shop_Instances", obj_shopInfinitePlayButton, {image_xscale: 0.8, image_yscale: 0.8});
+		draw_text_transformed_colour(325, 182, "Infinite", 0.55, 0.55, 0, c_dkgrey, c_dkgrey, c_dkgrey, c_dkgrey, 0.9);
+		draw_sprite_ext(spr_fish, 0, 365, 182, 2, 2, 0, c_grey, 0.9);
+		draw_text_transformed_colour(390, 182, "1250", 0.7, 0.7, 0, c_grey, c_grey, c_grey, c_grey, 0.9); 
+		if (instance_exists(obj_shopInfiniteConfirmButton))
+		{
+			instance_destroy(obj_shopInfiniteConfirmButton);
+		}
+	}
+	if (global.fishWallet >= 1250 || endlessTrackInfiniteIntru == true)
+	{
+		instance_create_layer(287, 180, "Shop_Instances", obj_shopInfinitePlayButton, {image_xscale: 0.8, image_yscale: 0.8});
+		draw_text_transformed_colour(325, 182, "Infinite" , 0.55, 0.55, 0, c_red, c_orange, c_fuchsia, c_red, 1);
+		switch(endlessTrackInfiniteIntru)
+		{
+			case(true):
+				draw_text_transformed_colour(378, 182, "OWNED!", 0.6, 0.6, 0, c_blue, c_purple, c_teal, c_blue, 1);
+				break;
+			case(false):
+				draw_sprite_ext(spr_fish, 0, 365, 182, 2, 2, 0, c_white, 1);
+				draw_text_transformed_colour(388, 182, "1250", 0.7, 0.7, 0, c_blue, c_blue, c_blue, c_blue, 1); 
+				break;
+		}
+		if (!(instance_exists(obj_shopInfiniteConfirmButton)) && !(endlessTrackSelection == enumEndlessTracks.infiniteInstrumental))
+		{
+			instance_create_layer(415, 180, "Shop_Instances", obj_shopInfiniteConfirmButton, {image_xscale: 0.4, image_yscale: 0.4});
+		}
+		if (instance_exists(obj_shopInfiniteConfirmButton) && endlessTrackSelection == enumEndlessTracks.infiniteInstrumental)
+		{
+			instance_destroy(obj_shopInfiniteConfirmButton);
+		}
+	}
+	
+	
+	
+	// Music Track "snd_backgroundWrong" - Other Level Track, Used for Default Endless
+	if (endlessTrackWrong == true)
+	{
+		instance_create_layer(287, 215, "Shop_Instances", obj_shopWrongPlayButton, {image_xscale: 0.8, image_yscale: 0.8});
+		draw_text_transformed_colour(325, 217, "Wrong to Polar" + "\nBear Arms" , 0.47, 0.47, 0, c_red, c_orange, c_fuchsia, c_red, 1);
+		switch(endlessTrackWrong)
+		{
+			case(true):
+				draw_text_transformed_colour(378, 217, "OWNED!", 0.6, 0.6, 0, c_blue, c_purple, c_teal, c_blue, 1);
+				break;
+			case(false):
+				draw_text_transformed_colour(385, 217, "Error", 0.7, 0.7, 0, c_blue, c_blue, c_blue, c_blue, 1); 
+				break;
+		}
+		if (!(instance_exists(obj_shopWrongConfirmButton)))
+		{
+			instance_create_layer(415, 215, "Shop_Instances", obj_shopWrongConfirmButton, {image_xscale: 0.4, image_yscale: 0.4});
+		}
+		if (instance_exists(obj_shopWrongConfirmButton) && endlessTrackSelection == enumEndlessTracks.wrongToPolarBearArms)
+		{
+			instance_destroy(obj_shopWrongConfirmButton);
+		}
+	}
 }
 
 #endregion

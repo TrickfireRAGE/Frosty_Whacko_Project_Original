@@ -14,7 +14,7 @@ enum enumShopQuote
 	scale = 1
 }
 
-enum enumLevelFinished
+enum enumLevelFinished // True or false would work instead.
 {
 	notFinished = 0,
 	finished = 1
@@ -26,22 +26,31 @@ enum enumPowerUps
 	Unlocked = 0
 }
 
-enum enumPowerUpsActivation
+enum enumPowerUpsActivation // True or false would work instead.
 {
 	notActivated = 0,
 	activated = 1
 }
 
-enum enumExplosionDebuff
+enum enumExplosionDebuff // This is an incorrect way of using Enums
 {
 	deactivated = -1,
 	activated = 30 // 30 is used for the 30 frames this explosion will be drawn also enum needs to be a constant int
 }
 
-enum enumFreezeDebuff
+enum enumFreezeDebuff // This is an incorrect way of using enums
 {
 	deactivated = -1,
 	activated = 300 // 300 is used for 5 seconds, as said above, enum needs to be constant so I can't use room speed.
+}
+
+enum enumEndlessTracks
+{
+	wrongToPolarBearArms = 0,
+	yourFateIsSealed = 1,
+	rightToPolarBearArms = 2,
+	beyondGekidoTheme = 3, // Going to grab a track that I like to put into the game
+	infiniteInstrumental = 4, // Cannot use outside of Education for Copyright Reasons!!
 }
 
 #endregion
@@ -49,7 +58,6 @@ enum enumFreezeDebuff
 #region Save File Loading (Not finished)
 
 global.fishWallet = undefined; // Used for storing fish inbetween levels.
-global.userName = undefined; // Used to check which save it is.
 global.userNameString = undefined; // Used to reduce amounts of Switches within my code improving efficiency
 
 #endregion
@@ -107,6 +115,14 @@ powerUpSDCountdown = 0;
 // De-Buffs
 explosionCounter = enumExplosionDebuff.deactivated; 
 freezeCounter = enumFreezeDebuff.deactivated;
+
+// Endless Track Selection
+endlessTrackSelection = enumEndlessTracks.wrongToPolarBearArms; // Default Track
+endlessTrackWrong = true; // Unlocked by Default
+endlessTrackFate = false; // All start at false for default
+endlessTrackRight = false;
+endlessTrackBeyond = false;
+endlessTrackInfiniteIntru = false;
 
 
 #endregion
