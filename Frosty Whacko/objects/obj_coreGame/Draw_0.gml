@@ -5,7 +5,7 @@
 if (room == rm_titleScreen)
 {
 	draw_set_font(fnt_creditsFont);
-	draw_text_transformed_colour(415, 10, "Version 0.0.2.2 Alpha Build", 0.4, 0.4, 0, c_red, c_red, c_red, c_red, 0.8);
+	draw_text_transformed_colour(415, 10, "Version 0.0.2.2.1 Alpha Build", 0.4, 0.4, 0, c_red, c_red, c_red, c_red, 0.8);
 	draw_set_font(fnt_baseFont);
 }
 
@@ -578,18 +578,18 @@ if (room == rm_shopSounds)
 	
 	// Music Track "snd_backgroundInfiniteInstru" - Infinite's Instramental from Sonic Forces. Not Usable outside College
 	
-	if (global.fishWallet < 1250)
+	if (global.fishWallet < 600)
 	{
 		instance_create_layer(287, 180, "Shop_Instances", obj_shopInfinitePlayButton, {image_xscale: 0.8, image_yscale: 0.8});
 		draw_text_transformed_colour(325, 182, "Infinite", 0.55, 0.55, 0, c_dkgrey, c_dkgrey, c_dkgrey, c_dkgrey, 0.9);
 		draw_sprite_ext(spr_fish, 0, 365, 182, 2, 2, 0, c_grey, 0.9);
-		draw_text_transformed_colour(390, 182, "1250", 0.7, 0.7, 0, c_grey, c_grey, c_grey, c_grey, 0.9); 
+		draw_text_transformed_colour(390, 182, "600", 0.7, 0.7, 0, c_grey, c_grey, c_grey, c_grey, 0.9); 
 		if (instance_exists(obj_shopInfiniteConfirmButton))
 		{
 			instance_destroy(obj_shopInfiniteConfirmButton);
 		}
 	}
-	if (global.fishWallet >= 1250 || endlessTrackInfiniteIntru == true)
+	if (global.fishWallet >= 600 || endlessTrackInfiniteIntru == true)
 	{
 		instance_create_layer(287, 180, "Shop_Instances", obj_shopInfinitePlayButton, {image_xscale: 0.8, image_yscale: 0.8});
 		draw_text_transformed_colour(325, 182, "Infinite" , 0.55, 0.55, 0, c_red, c_orange, c_fuchsia, c_red, 1);
@@ -600,7 +600,7 @@ if (room == rm_shopSounds)
 				break;
 			case(false):
 				draw_sprite_ext(spr_fish, 0, 365, 182, 2, 2, 0, c_white, 1);
-				draw_text_transformed_colour(388, 182, "1250", 0.7, 0.7, 0, c_blue, c_blue, c_blue, c_blue, 1); 
+				draw_text_transformed_colour(388, 182, "600", 0.7, 0.7, 0, c_blue, c_blue, c_blue, c_blue, 1); 
 				break;
 		}
 		if (!(instance_exists(obj_shopInfiniteConfirmButton)) && !(endlessTrackSelection == enumEndlessTracks.infiniteInstrumental))
@@ -615,18 +615,18 @@ if (room == rm_shopSounds)
 	
 	// Music Track "snd_backgroundBeyond" - Gekido Sound Track
 	
-	if (global.fishWallet < 1000)
+	if (global.fishWallet < 500)
 	{
 		instance_create_layer(287, 215, "Shop_Instances", obj_shopBeyondPlayButton, {image_xscale: 0.8, image_yscale: 0.8});
 		draw_text_transformed_colour(325, 217, "'Beyond'" + "\nGekido's Theme", 0.45, 0.45, 0, c_dkgrey, c_dkgrey, c_dkgrey, c_dkgrey, 0.9);
 		draw_sprite_ext(spr_fish, 0, 365, 217, 2, 2, 0, c_grey, 0.9);
-		draw_text_transformed_colour(390, 217, "1000", 0.7, 0.7, 0, c_grey, c_grey, c_grey, c_grey, 0.9); 
+		draw_text_transformed_colour(390, 217, "500", 0.7, 0.7, 0, c_grey, c_grey, c_grey, c_grey, 0.9); 
 		if (instance_exists(obj_shopBeyondConfirmButton))
 		{
 			instance_destroy(obj_shopBeyondConfirmButton);
 		}
 	}
-	if (global.fishWallet >= 1000 || endlessTrackBeyond == true)
+	if (global.fishWallet >= 500 || endlessTrackBeyond == true)
 	{
 		instance_create_layer(287, 215, "Shop_Instances", obj_shopBeyondPlayButton, {image_xscale: 0.8, image_yscale: 0.8});
 		draw_text_transformed_colour(325, 217, "'Beyond'" + "\nGekido's Theme", 0.45, 0.45, 0, c_red, c_orange, c_fuchsia, c_red, 1);
@@ -637,7 +637,7 @@ if (room == rm_shopSounds)
 				break;
 			case(false):
 				draw_sprite_ext(spr_fish, 0, 365, 217, 2, 2, 0, c_white, 1);
-				draw_text_transformed_colour(388, 217, "1000", 0.7, 0.7, 0, c_blue, c_blue, c_blue, c_blue, 1); 
+				draw_text_transformed_colour(388, 217, "500", 0.7, 0.7, 0, c_blue, c_blue, c_blue, c_blue, 1); 
 				break;
 		}
 		if (!(instance_exists(obj_shopBeyondConfirmButton)) && !(endlessTrackSelection == enumEndlessTracks.beyondGekidoTheme))
