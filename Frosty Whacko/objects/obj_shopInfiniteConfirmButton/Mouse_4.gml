@@ -15,10 +15,11 @@ if (ini_read_real(global.userNameString + "_Sounds", "Infinite", false) == true)
 
 if (ini_read_real(global.userNameString + "_Sounds", "Infinite", false) == false)
 {
+	var _price = 600;
 	ini_write_real(global.userNameString + "_Sounds", "Infinite", true);
-	ini_write_real(global.userNameString, "Fish", global.fishWallet - 1250);
+	ini_write_real(global.userNameString, "Fish", global.fishWallet - _price);
 	ini_write_real(global.userNameString + "_Sounds", "Track_Selection", enumEndlessTracks.infiniteInstrumental);
-	global.fishWallet -= 1250;
+	global.fishWallet -= _price;
 	audio_play_sound(snd_soundeffectButtonPress, 0, 0);
 	obj_coreGame.endlessTrackInfiniteIntru = true;
 	obj_coreGame.endlessTrackSelection = enumEndlessTracks.infiniteInstrumental;
