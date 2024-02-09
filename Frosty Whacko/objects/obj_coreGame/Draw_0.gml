@@ -1,11 +1,11 @@
-/// @description ALL OF THIS CAN BE IN A UI MANAGER INSTEAD
+/// @description Move to New Object called obj_coreUI
 
 #region Title Screen (Version Number)
 
 if (room == rm_titleScreen)
 {
 	draw_set_font(fnt_creditsFont);
-	draw_text_transformed_colour(415, 10, "Version 0.0.2.2.4 Alpha Build" + "\nThe Beginning of the Rebuild", 0.4, 0.4, 0, c_red, c_red, c_red, c_red, 0.8);
+	draw_text_transformed_colour(415, 10, "Version 0.0.2.2.5 Alpha Build" + "\nThe Beginning of the Rebuild", 0.4, 0.4, 0, c_red, c_red, c_red, c_red, 0.8);
 	draw_set_font(fnt_baseFont);
 }
 
@@ -26,11 +26,6 @@ if (room == rm_credits)
 		"\n-------------------------------" +
 		"\nExternal Assistance" +
 		"\nMusic - The KAI Games" +
-		"\nBeyond, Gekido's Theme - The KAI Games" +
-		"\nInfinite's Theme, Sonic Forces - " +
-		"\nSEGA + Tomoya Ohtani + Jun Senoue" +
-		"\nInfinite's Theme Vocals and Mixed" +
-		"\n ^ - Tyler Smyth" +
 		"\nSound Effects Obtained from -" + 
 		"\nhttps://www.zapsplat.com" +
 		"\nGame Engine - GameMaker Studio 2 LTS", 0.70, 0.70, 0, c_grey, c_grey, c_grey, c_grey, 1);
@@ -573,43 +568,6 @@ if (room == rm_shopSounds)
 		if (instance_exists(obj_shopWrongConfirmButton) && endlessTrackSelection == enumEndlessTracks.wrongToPolarBearArms)
 		{
 			instance_destroy(obj_shopWrongConfirmButton);
-		}
-	}
-	
-	// Music Track "snd_backgroundInfiniteInstru" - Infinite's Instramental from Sonic Forces. Not Usable outside College
-	
-	if (global.fishWallet < 600)
-	{
-		instance_create_layer(287, 180, "Shop_Instances", obj_shopInfinitePlayButton, {image_xscale: 0.8, image_yscale: 0.8});
-		draw_text_transformed_colour(325, 182, "Infinite", 0.55, 0.55, 0, c_dkgrey, c_dkgrey, c_dkgrey, c_dkgrey, 0.9);
-		draw_sprite_ext(spr_fish, 0, 365, 182, 2, 2, 0, c_grey, 0.9);
-		draw_text_transformed_colour(390, 182, "600", 0.7, 0.7, 0, c_grey, c_grey, c_grey, c_grey, 0.9); 
-		if (instance_exists(obj_shopInfiniteConfirmButton))
-		{
-			instance_destroy(obj_shopInfiniteConfirmButton);
-		}
-	}
-	if (global.fishWallet >= 600 || endlessTrackInfiniteIntru == true)
-	{
-		instance_create_layer(287, 180, "Shop_Instances", obj_shopInfinitePlayButton, {image_xscale: 0.8, image_yscale: 0.8});
-		draw_text_transformed_colour(325, 182, "Infinite" , 0.55, 0.55, 0, c_red, c_orange, c_fuchsia, c_red, 1);
-		switch(endlessTrackInfiniteIntru)
-		{
-			case(true):
-				draw_text_transformed_colour(378, 182, "OWNED!", 0.6, 0.6, 0, c_blue, c_purple, c_teal, c_blue, 1);
-				break;
-			case(false):
-				draw_sprite_ext(spr_fish, 0, 365, 182, 2, 2, 0, c_white, 1);
-				draw_text_transformed_colour(388, 182, "600", 0.7, 0.7, 0, c_blue, c_blue, c_blue, c_blue, 1); 
-				break;
-		}
-		if (!(instance_exists(obj_shopInfiniteConfirmButton)) && !(endlessTrackSelection == enumEndlessTracks.infiniteInstrumental))
-		{
-			instance_create_layer(415, 180, "Shop_Instances", obj_shopInfiniteConfirmButton, {image_xscale: 0.4, image_yscale: 0.4});
-		}
-		if (instance_exists(obj_shopInfiniteConfirmButton) && endlessTrackSelection == enumEndlessTracks.infiniteInstrumental)
-		{
-			instance_destroy(obj_shopInfiniteConfirmButton);
 		}
 	}
 	
