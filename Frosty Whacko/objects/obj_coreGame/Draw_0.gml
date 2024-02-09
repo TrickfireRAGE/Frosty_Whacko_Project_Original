@@ -5,7 +5,7 @@
 if (room == rm_titleScreen)
 {
 	draw_set_font(fnt_creditsFont);
-	draw_text_transformed_colour(415, 10, "Version 0.0.2.2.1 Alpha Build", 0.4, 0.4, 0, c_red, c_red, c_red, c_red, 0.8);
+	draw_text_transformed_colour(415, 10, "Version 0.0.2.2.4 Alpha Build" + "\nThe Beginning of the Rebuild", 0.4, 0.4, 0, c_red, c_red, c_red, c_red, 0.8);
 	draw_set_font(fnt_baseFont);
 }
 
