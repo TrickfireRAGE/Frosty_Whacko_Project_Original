@@ -1,7 +1,7 @@
 // Function Below 
 function scr_menuSound(_soundVolume)
 {
-	if (_soundVolume == undefined) // For at the start of the game at first bootup
+	if (_soundVolume == "NOT_SET") // For at the start of the game at first bootup
 	{
 		audio_group_load(audio_groupMusic);
 		audio_group_load(audio_groupSoundEffects);

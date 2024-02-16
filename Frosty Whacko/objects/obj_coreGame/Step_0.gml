@@ -1,4 +1,4 @@
-/// @description 
+/// @description COMPLETE REWORK NEEDED
 
 #region Video Checker for Intro
 
@@ -19,7 +19,7 @@ if (room == rm_level1_1)
 	spawnTimer++;
 	levelTimer--; // Timer
 
-	if (spawnTimer == (room_speed * 2) && finishedLevel == enumLevelFinished.notFinished)
+	if (spawnTimer == (room_speed * 2) && finishedLevel == false)
 	{
 		scr_sealSpawnL1();
 		spawnTimer = 0;
@@ -30,11 +30,11 @@ if (room == rm_level1_1)
 		instance_create_layer(37, 240, "UI_Layer", obj_powerUpTwoButton);
 		powerUpObjectCreation = 0;
 	}
-	if (levelTimer <= 0 && finishedLevel == enumLevelFinished.notFinished)
+	if (levelTimer <= 0 && finishedLevel == false)
 	{
 		alarm_set(1,1);
 	}
-	if (finishedLevel == enumLevelFinished.finished && (instance_exists(obj_sealEmpty) || instance_exists(obj_sealFish)))
+	if (finishedLevel == true && (instance_exists(obj_sealEmpty) || instance_exists(obj_sealFish)))
 	{
 		instance_destroy(obj_sealEmpty);
 		instance_destroy(obj_sealFish);
@@ -43,7 +43,7 @@ if (room == rm_level1_1)
 		instance_destroy(obj_levelExitButton);
 		
 	}
-	if (finishedLevel == enumLevelFinished.finished && !instance_exists(obj_resultsReturnButton))
+	if (finishedLevel == true && !instance_exists(obj_resultsReturnButton))
 	{
 		instance_create_layer(282, 164, "UI_Layer", obj_resultsReturnButton);
 		audio_play_sound(snd_soundeffectVictory, 0, 0, 1.5); // Add code here for alternative options
@@ -58,7 +58,7 @@ if (room == rm_levelEndless)
 {
 	spawnTimer++;
 
-	if (spawnTimer == (room_speed / 2) && finishedLevel == enumLevelFinished.notFinished)
+	if (spawnTimer == (room_speed / 2) && finishedLevel == false)
 	{
 		scr_sealSpawnL1();
 		spawnTimer = 0;
@@ -69,7 +69,7 @@ if (room == rm_levelEndless)
 		instance_create_layer(37, 240, "UI_Layer", obj_powerUpTwoButton);
 		powerUpObjectCreation = 0;
 	}
-	if (finishedLevel == enumLevelFinished.finished && (instance_exists(obj_sealEmpty) || instance_exists(obj_sealFish) || instance_exists(obj_sealBomb) || instance_exists(obj_sealIce)))
+	if (finishedLevel == true && (instance_exists(obj_sealEmpty) || instance_exists(obj_sealFish) || instance_exists(obj_sealBomb) || instance_exists(obj_sealIce)))
 	{
 		instance_destroy(obj_sealEmpty);
 		instance_destroy(obj_sealFish);
@@ -83,7 +83,7 @@ if (room == rm_levelEndless)
 		instance_destroy(obj_levelEndlessExitButton);
 		
 	}
-	if (finishedLevel == enumLevelFinished.finished && !instance_exists(obj_resultsEndlessReturnButton))
+	if (finishedLevel == true && !instance_exists(obj_resultsEndlessReturnButton))
 	{
 		instance_create_layer(282, 164, "UI_Layer", obj_resultsEndlessReturnButton);
 		audio_play_sound(snd_soundeffectVictory, 0, 0, 1.5); // Add code here for alternative options

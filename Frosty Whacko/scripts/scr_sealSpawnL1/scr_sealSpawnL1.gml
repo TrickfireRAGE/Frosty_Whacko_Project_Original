@@ -22,7 +22,7 @@ function scr_sealSpawnL1() // For the Levels 1-1 and Beyond in the Level 1 secti
 	
 	#endregion
 	
-	#region Location Check/Spawning
+	#region Location Check/Spawning NEEDS TO BE REPLACED WITH OBJECT FOCUSED SPAWNING INSTEAD OF X/Y AXIS SPAWNING
 	
 	location = [];
 	// First Row Of Level 1-1
@@ -65,7 +65,7 @@ function scr_sealSpawnL1() // For the Levels 1-1 and Beyond in the Level 1 secti
 	location[14][enumLocation.xAxis] = 432;
 	location[14][enumLocation.yAxis] = 224;
 	
-	switch (room)
+	switch (room) // REWORK THIS AS WELL
 	{
 		case (rm_level1_1):
 			var spawnLocation = irandom_range(0, 5);
@@ -87,7 +87,7 @@ function scr_sealSpawnL1() // For the Levels 1-1 and Beyond in the Level 1 secti
 	
 	randomSeal = irandom_range(0, 999); // To allow for more flexible chances instead of just two numbers. 
 	
-	switch (room)
+	switch (room) // REWORK AGAIN, USING FINN's METHOD.
 	{
 		case (rm_level1_1):
 			if (randomSeal >= 500)

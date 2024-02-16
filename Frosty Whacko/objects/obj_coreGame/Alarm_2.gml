@@ -1,6 +1,6 @@
 /// @description Times Two Off
 
-activatedPowerUpTT = enumPowerUpsActivation.notActivated;
+activatedPowerUpTT = false;
 
 powerUpTT -= 1;
 

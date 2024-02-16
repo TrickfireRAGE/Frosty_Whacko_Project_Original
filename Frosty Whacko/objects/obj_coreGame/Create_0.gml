@@ -14,31 +14,19 @@ enum enumShopQuote
 	scale = 1
 }
 
-enum enumLevelFinished // True or false would work instead.
-{
-	notFinished = 0,
-	finished = 1
-}
-
 enum enumPowerUps
 {
 	notUnlocked = -1,
 	Unlocked = 0
 }
 
-enum enumPowerUpsActivation // True or false would work instead.
-{
-	notActivated = 0,
-	activated = 1
-}
-
-enum enumExplosionDebuff // This is an incorrect way of using Enums
+enum enumExplosionDebuff // This is an incorrect way of using Enums rework this.
 {
 	deactivated = -1,
 	activated = 30 // 30 is used for the 30 frames this explosion will be drawn also enum needs to be a constant int
 }
 
-enum enumFreezeDebuff // This is an incorrect way of using enums
+enum enumFreezeDebuff // This is an incorrect way of using enums, rework this.
 {
 	deactivated = -1,
 	activated = 300 // 300 is used for 5 seconds, as said above, enum needs to be constant so I can't use room speed.
@@ -50,25 +38,24 @@ enum enumEndlessTracks
 	yourFateIsSealed = 1,
 	rightToPolarBearArms = 2,
 	beyondGekidoTheme = 3, // Going to grab a track that I like to put into the game
-	infiniteInstrumental = 4, // Cannot use outside of Education for Copyright Reasons!!
 }
 
 #endregion
 
 #region Save File Loading (Not finished)
 
-global.fishWallet = undefined; // Used for storing fish inbetween levels.
-global.userNameString = undefined; // Used to reduce amounts of Switches within my code improving efficiency
+global.fishWallet = "NOT_SET"; // Used for storing fish inbetween levels.
+global.userNameString = "NOT_SET"; // Used to reduce amounts of Switches within my code improving efficiency
 
 #endregion
 
 
 #region Display Initialization
 
-global.resolutionWidth = undefined;
-global.resolutionHeight = undefined;
-global.fullScreen = undefined;
-global.soundVolume = undefined;
+global.resolutionWidth = "NOT_SET";
+global.resolutionHeight = "NOT_SET";
+global.fullScreen = "NOT_SET";
+global.soundVolume = "NOT_SET";
 
 scr_menuResolution(global.resolutionHeight, global.fullScreen);
 
@@ -76,7 +63,7 @@ scr_menuResolution(global.resolutionHeight, global.fullScreen);
 
 #region Sound Initialization
 
-global.soundVolume = undefined;
+global.soundVolume = "NOT_SET";
 
 scr_menuSound(global.soundVolume);
 
@@ -84,33 +71,35 @@ scr_menuSound(global.soundVolume);
 
 #region Variable Room Checking
 
-global.returnSettings = undefined;
+global.returnSettings = "NOT_SET";
 
 #endregion
 
 #region Variables for Levels
 
+var defVariable = 0;
+
 // Timers
-spawnTimer = 0;
-levelTimer = undefined; // Set on room start
-timerSprite = 0; // Variable needed for animating the timer in Draw Event
-finishedLevel = enumLevelFinished.notFinished; // Starts the level as not finished.
+spawnTimer = defVariable;
+levelTimer = "NOT_SET"; // Set on room start
+timerSprite = defVariable; // Variable needed for animating the timer in Draw Event
+finishedLevel = false; // Starts the level as not finished.
 
 // Scores
-score = 0; // Starts Score at Zero at the start of the game
-fishScore = 0; // Starts Fish Score at Zero at the start of the game
-sealNoFishCounter = 0; // Counts how many seals have been whacked
-sealFishCounter = 0;
-sealBombCounter = 0;
-sealIceCounter = 0;
+score = defVariable; // Starts Score at Zero at the start of the game
+fishScore = defVariable; // Starts Fish Score at Zero at the start of the game
+sealNoFishCounter = defVariable; // Counts how many seals have been whacked
+sealFishCounter = defVariable;
+sealBombCounter = defVariable;
+sealIceCounter = defVariable;
 
 // Power-Ups
 powerUpTT = enumPowerUps.notUnlocked; // When not unlocked it will be -1
 powerUpSD = enumPowerUps.notUnlocked; // Same as above.
-activatedPowerUpTT = enumPowerUpsActivation.notActivated; // Used for checking if the power is activated
-activatedPowerUpSD = enumPowerUpsActivation.notActivated; // ^ but for Slow Down
-powerUpTTCountdown = 0;
-powerUpSDCountdown = 0;
+activatedPowerUpTT = false; // Used for checking if the power is activated
+activatedPowerUpSD = false; // ^ but for Slow Down
+powerUpTTCountdown = defVariable;
+powerUpSDCountdown = defVariable;
 
 // De-Buffs
 explosionCounter = enumExplosionDebuff.deactivated; 
@@ -122,7 +111,6 @@ endlessTrackWrong = true; // Unlocked by Default
 endlessTrackFate = false; // All start at false for default
 endlessTrackRight = false;
 endlessTrackBeyond = false;
-endlessTrackInfiniteIntru = false;
 
 
 #endregion

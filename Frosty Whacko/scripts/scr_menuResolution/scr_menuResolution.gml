@@ -1,7 +1,7 @@
 // Function Below
 function scr_menuResolution(_height, _fullScreen) // So it doesn't need to be repeated multiple times (Aspect Ratio is only 16/9 for Alpha build)
 {
-	if (_height == undefined) 
+	if (_height == "NOT_SET") 
 	// ^^ Needed for first iteration of the game, only checking height as if height is undefined, both will be undefined
 	{
 		ini_open("userSettings.ini");

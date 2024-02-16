@@ -1,6 +1,6 @@
 /// @description Slow Down Off
 
-activatedPowerUpSD = enumPowerUpsActivation.notActivated;
+activatedPowerUpSD = false;
 
 powerUpSD -= 1;
 
